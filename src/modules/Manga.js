@@ -9,8 +9,8 @@ class Manga extends Component {
   render() {
     console.log(this.props);
     return (
-      <div class="columns">
-        <div class="column is-one-fifth">
+      <div className="columns">
+        <div className="column is-one-fifth">
           <Card />
         </div>
       </div>

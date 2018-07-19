@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "mobx-react";
+import "babel-polyfill";
 
 import "bulma/css/bulma.min.css";
 

@@ -1,8 +1,5 @@
-import { Manga } from "./models/Manga";
+import manga from "./models/Manga";
 
 export default {
-  manga: Manga.create({
-    title: "hello",
-    mangaType: {}
-  })
+  manga: manga.create()
 };
