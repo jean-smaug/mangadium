@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<=== Manga ===> should create store 1`] = `
+Object {
+  "mangaType": Object {
+    "foo": "shonen",
+  },
+  "title": "One Piece",
+}
+`;
