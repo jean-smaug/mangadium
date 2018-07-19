@@ -9,6 +9,7 @@
     "dev": "parcel index.html"
   },
   "dependencies": {
+    "bulma": "0.7.1",
     "mobx": "5.0.3",
     "mobx-react": "5.2.3",
     "mobx-state-tree": "3.0.0",
