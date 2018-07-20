@@ -10,7 +10,15 @@ class Manga extends Component {
     return (
       <div className="columns is-multiline">
         {this.props.manga.list.map(manga => (
-          <div className="column is-one-quarter">
+          <div
+            key={manga.id}
+            style={{
+              height: "200px",
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}
+            className="column is-one-quarter"
+          >
             <Card {...manga} />
           </div>
         ))}

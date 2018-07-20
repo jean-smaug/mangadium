@@ -2,18 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class Card extends Component {
-  static defaultProps = {
-    image: ""
-  };
-
   static propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
-    synopsis: PropTypes.string
+    synopsis: PropTypes.string,
+    startDate: PropTypes.string
   };
 
   render() {
-    const { title, image, synopsis } = this.props;
+    const { title, image, synopsis, startDate } = this.props;
     return (
       <div className="card">
         {/* <div className="card-image">
@@ -36,9 +33,9 @@ class Card extends Component {
 
           <div className="content">
             {synopsis}
-            <a href="#">#css</a> <a href="#">#responsive</a>
+            {/* <a href="#">#css</a> <a href="#">#responsive</a> */}
             <br />
-            <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <time dateTime={startDate}>{startDate}</time>
           </div>
         </div>
       </div>

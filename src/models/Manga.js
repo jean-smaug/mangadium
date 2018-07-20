@@ -3,9 +3,11 @@ import { types, flow, applySnapshot } from "mobx-state-tree";
 import request from "../utils/request";
 
 export const Manga = types.model("Manga", {
+  id: types.number,
   title: types.string,
   image: types.string,
-  synopsis: types.string
+  synopsis: types.string,
+  startDate: types.string
 });
 
 const Mangas = types
@@ -20,15 +22,19 @@ const Mangas = types
       try {
         const mangas = (yield request.getMangas()).map(
           ({
+            id,
             attributes: {
               canonicalTitle,
               posterImage: { original },
-              synopsis
+              synopsis,
+              startDate
             }
           }) => ({
+            id: Number(id),
             title: canonicalTitle,
             image: original,
-            synopsis
+            synopsis,
+            startDate: startDate ? startDate : ""
           })
         );
 
