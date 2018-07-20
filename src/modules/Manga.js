@@ -7,10 +7,10 @@ import Card from "../components/Card";
 @observer
 class Manga extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="columns">
         <div className="column is-one-fifth">
+          {this.props.manga.list.map(manga => <div>{manga.title}</div>)}
           <Card />
         </div>
       </div>

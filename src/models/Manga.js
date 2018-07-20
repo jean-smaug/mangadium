@@ -1,10 +1,9 @@
-import { types, flow } from "mobx-state-tree";
+import { types, flow, applySnapshot } from "mobx-state-tree";
 
 import request from "../utils/request";
 
 export const Manga = types.model("Manga", {
-  title: types.string,
-  mangaType: types.frozen()
+  title: types.string
 });
 
 const Mangas = types
@@ -13,15 +12,27 @@ const Mangas = types
   })
   .actions(self => ({
     afterCreate() {
-      flow(function*() {
-        try {
-          const mangas = yield request.getMangas();
-          console.log(mangas);
-        } catch (error) {
-          console.log(error);
-        }
-      });
-    }
+      self.hyrdate();
+    },
+    hyrdate: flow(function* hyrdate() {
+      try {
+        const mangas = (yield request.getMangas()).map(
+          ({
+            attributes: {
+              canonicalTitle,
+              posterImage: { original }
+            }
+          }) => ({
+            title: canonicalTitle,
+            image: original
+          })
+        );
+
+        applySnapshot(self.list, mangas);
+      } catch (error) {
+        console.log(error);
+      }
+    })
   }));
 
 export default Mangas;
