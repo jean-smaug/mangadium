@@ -8,11 +8,12 @@ import Card from "../components/Card";
 class Manga extends Component {
   render() {
     return (
-      <div className="columns">
-        <div className="column is-one-fifth">
-          {this.props.manga.list.map(manga => <div>{manga.title}</div>)}
-          <Card />
-        </div>
+      <div className="columns is-multiline">
+        {this.props.manga.list.map(manga => (
+          <div className="column is-one-quarter">
+            <Card {...manga} />
+          </div>
+        ))}
       </div>
     );
   }

@@ -3,7 +3,9 @@ import { types, flow, applySnapshot } from "mobx-state-tree";
 import request from "../utils/request";
 
 export const Manga = types.model("Manga", {
-  title: types.string
+  title: types.string,
+  image: types.string,
+  synopsis: types.string
 });
 
 const Mangas = types
@@ -20,11 +22,13 @@ const Mangas = types
           ({
             attributes: {
               canonicalTitle,
-              posterImage: { original }
+              posterImage: { original },
+              synopsis
             }
           }) => ({
             title: canonicalTitle,
-            image: original
+            image: original,
+            synopsis
           })
         );
 
