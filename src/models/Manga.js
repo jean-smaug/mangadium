@@ -18,7 +18,7 @@ const Mangas = types
     afterCreate() {
       self.hyrdate();
     },
-    hyrdate: flow(function* hyrdate() {
+    hyrdate: flow(function*() {
       try {
         const mangas = (yield request.getMangas()).map(
           ({

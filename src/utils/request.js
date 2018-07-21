@@ -1,4 +1,6 @@
 const baseUrl = "https://kitsu.io/api/edge";
+const applicationId = "7159d405";
+const applicationKeys = "c6bb47a8b0aa60259fd708347d693164";
 
 const headers = new Headers({
   Accept: "application/vnd.api+json",
