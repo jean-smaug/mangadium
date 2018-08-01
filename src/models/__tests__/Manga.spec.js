@@ -5,8 +5,15 @@ describe("<=== Manga ===>", () => {
 
   beforeEach(() => {
     manga = Manga.create({
+      id: 43,
       title: "One Piece",
-      mangaType: { foo: "shonen" }
+      imageUrl: "http://one-piece.jpg",
+      startDate: "13 aout 2016",
+      endDate: null,
+      url: "http://one-piece.fr",
+      rank: 1,
+      score: 9.12,
+      type: "shonen"
     });
   });
 

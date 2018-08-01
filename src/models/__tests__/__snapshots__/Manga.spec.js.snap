@@ -2,9 +2,14 @@
 
 exports[`<=== Manga ===> should create store 1`] = `
 Object {
-  "mangaType": Object {
-    "foo": "shonen",
-  },
+  "endDate": null,
+  "id": 43,
+  "imageUrl": "http://one-piece.jpg",
+  "rank": 1,
+  "score": 9.12,
+  "startDate": "13 aout 2016",
   "title": "One Piece",
+  "type": "shonen",
+  "url": "http://one-piece.fr",
 }
 `;
