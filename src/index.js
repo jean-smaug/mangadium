@@ -11,8 +11,7 @@ import Manga from "./modules/Manga";
 
 ReactDOM.render(
   <Provider {...store}>
-    <p>Hello</p>
-    {/* <Manga /> */}
+    <Manga />
   </Provider>,
   document.getElementById("app")
 );

@@ -10,7 +10,7 @@ class Card extends Component {
   };
 
   render() {
-    const { title, image, synopsis, startDate } = this.props;
+    const { title, imageUrl, synopsis, startDate } = this.props;
     return (
       <div className="card">
         {/* <div className="card-image">
@@ -22,7 +22,7 @@ class Card extends Component {
           <div className="media">
             <div className="media-left">
               <figure className="image is-48x48">
-                <img src={image} alt="Placeholder image" />
+                <img src={imageUrl} alt="Placeholder image" />
               </figure>
             </div>
             <div className="media-content">

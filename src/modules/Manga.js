@@ -17,7 +17,7 @@ class Manga extends Component {
               overflow: "hidden",
               textOverflow: "ellipsis"
             }}
-            className="column is-one-quarter"
+            className="column is-half"
           >
             <Card {...manga} />
           </div>

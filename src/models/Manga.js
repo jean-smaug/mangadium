@@ -5,9 +5,13 @@ import request from "../utils/request";
 export const Manga = types.model("Manga", {
   id: types.number,
   title: types.string,
-  image: types.string,
-  synopsis: types.string,
-  startDate: types.string
+  imageUrl: types.string,
+  startDate: types.string,
+  endDate: types.maybeNull(types.string),
+  url: types.string,
+  rank: types.number,
+  score: types.maybeNull(types.number),
+  type: types.string
 });
 
 const Mangas = types
@@ -20,21 +24,27 @@ const Mangas = types
     },
     hyrdate: flow(function*() {
       try {
-        const mangas = (yield request.getMangas()).map(
+        const mangas = (yield request.getTopMangas()).map(
           ({
-            id,
-            attributes: {
-              canonicalTitle,
-              posterImage: { original },
-              synopsis,
-              startDate
-            }
+            image_url: imageUrl,
+            mal_id: id,
+            publishing_end: endDate,
+            publishing_start: startDate,
+            rank,
+            score,
+            title,
+            type,
+            url
           }) => ({
-            id: Number(id),
-            title: canonicalTitle,
-            image: original,
-            synopsis,
-            startDate: startDate ? startDate : ""
+            id,
+            endDate,
+            startDate,
+            title,
+            imageUrl,
+            url,
+            rank,
+            score,
+            type
           })
         );
 
