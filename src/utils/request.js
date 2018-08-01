@@ -5,12 +5,12 @@ class Request {
     return fetch(`${baseUrl}${path}`).then(response => response.json());
   }
 
-  async getTopAnimes() {
-    return (await Request.jsonFetch("/top/anime")).top;
-  }
-
   async getTopMangas() {
     return (await Request.jsonFetch("/top/manga")).top;
+  }
+
+  async getManga(id) {
+    return await Request.jsonFetch(`/manga${id}`);
   }
 }
 
