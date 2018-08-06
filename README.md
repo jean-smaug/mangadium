@@ -1,6 +1,6 @@
-# react-medium-food
+# react-medium-anime
 
-app listant des recettes de cuisine avec possibilité d'ajouter des recettes fav (indexeddb)
+app listant manga avec possibilité d'ajouter des manga fav (indexeddb)
 bulma, react, mobx-state-tree
 
-https://jikan.docs.apiary.io/#introduction/information
+https://api.jikan.moe
