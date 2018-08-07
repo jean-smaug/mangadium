@@ -12,6 +12,10 @@ class Request {
   async getManga(id) {
     return await Request.jsonFetch(`/manga/${id}`);
   }
+
+  async searchMangas(query, page = 1) {
+    return await Request.jsonFetch(`/search/manga?q=${query}&page=${page}`);
+  }
 }
 
 export default new Request();
