@@ -10,7 +10,7 @@ class Request {
   }
 
   async getManga(id) {
-    return await Request.jsonFetch(`/manga${id}`);
+    return await Request.jsonFetch(`/manga/${id}`);
   }
 }
 

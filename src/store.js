@@ -1,12 +1,12 @@
 import { types, addMiddleware } from "mobx-state-tree";
 import { connectReduxDevtools } from "mst-middlewares";
-import manga from "./models/Manga";
+import Manga from "./models/Manga";
 
 const store = types
   .model({
-    manga
+    manga: Manga
   })
-  .create({ manga: manga.create() });
+  .create({ manga: Manga.create() });
 
 addMiddleware(store, connectReduxDevtools(require("remotedev"), store));
 
