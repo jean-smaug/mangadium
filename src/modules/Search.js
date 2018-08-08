@@ -16,15 +16,15 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <a className="navbar-item" href="/">
               Mangadium
             </a>
 
             <a
               role="button"
-              class="navbar-burger"
+              className="navbar-burger"
               aria-label="menu"
               aria-expanded="false"
             >
@@ -37,7 +37,9 @@ class Search extends Component {
         <div className="field">
           <div className="select">
             <select>
-              {[...Array(10).keys()].map((_, i) => <option>{i + 1}</option>)}
+              {[...Array(10).keys()].map((_, i) => (
+                <option key={i}>{i + 1}</option>
+              ))}
             </select>
           </div>
           <div className="field">

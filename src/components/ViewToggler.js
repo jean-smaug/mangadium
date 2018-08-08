@@ -11,14 +11,18 @@ class ViewToggler extends Component {
           zIndex: 10000,
           width: "100vw",
           height: "100vh",
-          transform: `translateY(${this.props.isVisible ? 0 : "100vh"})`
+          visibility: this.props.isVisible ? "visible" : "hidden",
+          opacity: this.props.isVisible ? 1 : 0,
+          transition: "opacity 400ms ease"
         }}
       >
         <div
           style={{
             marginTop: "5vh",
             height: "100%",
-            background: "white"
+            background: "white",
+            transform: `translateY(${this.props.isVisible ? 0 : "100vh"})`,
+            transition: "transform 600ms ease"
           }}
         >
           <button className="button" onClick={this.props.onClose}>

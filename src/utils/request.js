@@ -15,6 +15,10 @@ class Request {
     return await this.jsonFetch(`/manga/${id}`);
   }
 
+  async getMangaAndPicture(id) {
+    return await this.jsonFetch(`/manga/${id}/pictures`);
+  }
+
   async searchMangas(query, page = 1) {
     return await this.jsonFetch(`/search/manga?q=${query}&page=${page}`);
   }

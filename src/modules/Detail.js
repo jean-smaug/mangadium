@@ -9,10 +9,21 @@ import ViewToggler from "../components/ViewToggler";
 class Detail extends Component {
   render() {
     const { detail } = this.props;
+    console.log(detail);
 
     return (
       <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleStatus}>
-        <Card {...detail.manga} />
+        {detail.manga && (
+          <div>
+            <Card {...detail.manga} />
+
+            {detail.manga.images.map(image => (
+              <figure class="image is-128x128">
+                <img src={image} />
+              </figure>
+            ))}
+          </div>
+        )}
       </ViewToggler>
     );
   }

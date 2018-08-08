@@ -1,4 +1,4 @@
-import { types, flow } from "mobx-state-tree";
+import { types, flow, applySnapshot } from "mobx-state-tree";
 
 import request from "../utils/request";
 
@@ -12,7 +12,8 @@ const filterKeys = ({
   score,
   title,
   type,
-  link_canonical: url
+  link_canonical: url,
+  image: images
 }) => ({
   id,
   endDate,
@@ -22,7 +23,8 @@ const filterKeys = ({
   url,
   rank,
   score,
-  type
+  type,
+  images
 });
 
 const Detail = types
@@ -35,11 +37,15 @@ const Detail = types
       self.isOpen = !self.isOpen;
     },
     setManga: flow(function*(id) {
-      const manga = filterKeys(yield request.getManga(id));
+      try {
+        const manga = yield request.getMangaAndPicture(id);
+        console.log(manga);
+        self.manga = filterKeys(manga);
 
-      self.manga = manga;
-
-      self.toggleStatus();
+        self.toggleStatus();
+      } catch (error) {
+        console.error(error);
+      }
     })
   }));
 

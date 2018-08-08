@@ -31,7 +31,8 @@ const Manga = types.model({
   url: types.string,
   rank: types.number,
   score: types.maybeNull(types.number),
-  type: types.string
+  type: types.string,
+  images: types.optional(types.array(types.string), [])
 });
 
 export default Manga;

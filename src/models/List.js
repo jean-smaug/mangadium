@@ -38,7 +38,6 @@ export const Manga = types.model("Manga", {
 
 const List = types
   .model({
-    current: types.maybeNull(Manga),
     mangas: types.optional(types.array(Manga), [])
   })
   .actions(self => ({

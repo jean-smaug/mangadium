@@ -10,28 +10,24 @@ class Manga extends Component {
     const { list, detail } = this.props;
     return (
       <Fragment>
-        {list.current !== null ? (
-          <div>Hello</div>
-        ) : (
-          <div className="columns is-multiline">
-            {list.mangas.map(item => (
-              <div
-                key={item.id}
-                style={{
-                  height: "200px",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis"
-                }}
-                className="column is-half"
-                onClick={() => {
-                  detail.setManga(item.id);
-                }}
-              >
-                <Card {...item} />
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="columns is-multiline">
+          {list.mangas.map(item => (
+            <div
+              key={item.id}
+              style={{
+                height: "200px",
+                overflow: "hidden",
+                textOverflow: "ellipsis"
+              }}
+              className="column is-half"
+              onClick={() => {
+                detail.setManga(item.id);
+              }}
+            >
+              <Card {...item} />
+            </div>
+          ))}
+        </div>
       </Fragment>
     );
   }
