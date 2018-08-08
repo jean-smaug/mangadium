@@ -1,11 +1,11 @@
-import { types } from "types";
+import { types } from "mobx-state-tree";
 
 import Manga from "./Manga";
 
 const Detail = types
   .model({
-    manga: Manga,
-    isOpen: types.boolean
+    manga: types.optional(types.map(Manga), {}),
+    isOpen: types.optional(types.boolean, false)
   })
   .actions(self => ({
     toggleStatus() {

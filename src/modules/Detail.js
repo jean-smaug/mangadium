@@ -7,7 +7,13 @@ import ViewToggler from "../components/ViewToggler";
 @observer
 class Detail extends Component {
   render() {
-    return <ViewToggler isVisible={true}>Hello</ViewToggler>;
+    const { detail } = this.props;
+
+    return (
+      <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleStatus}>
+        Hello
+      </ViewToggler>
+    );
   }
 }
 
