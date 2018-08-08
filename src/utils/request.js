@@ -1,20 +1,22 @@
-const baseUrl = "https://api.jikan.moe";
-
 class Request {
-  static jsonFetch(path = "/") {
-    return fetch(`${baseUrl}${path}`).then(response => response.json());
+  constructor(baseUrl = "https://api.jikan.moe") {
+    this.baseUrl = baseUrl;
+  }
+
+  jsonFetch(path = "/") {
+    return fetch(`${this.baseUrl}${path}`).then(response => response.json());
   }
 
   async getTopMangas() {
-    return (await Request.jsonFetch("/top/manga")).top;
+    return (await this.jsonFetch("/top/manga")).top;
   }
 
   async getManga(id) {
-    return await Request.jsonFetch(`/manga/${id}`);
+    return await this.jsonFetch(`/manga/${id}`);
   }
 
   async searchMangas(query, page = 1) {
-    return await Request.jsonFetch(`/search/manga?q=${query}&page=${page}`);
+    return await this.jsonFetch(`/search/manga?q=${query}&page=${page}`);
   }
 }
 

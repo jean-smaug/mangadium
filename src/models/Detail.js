@@ -7,13 +7,12 @@ import Manga from "./Manga";
 const filterKeys = ({
   image_url: imageUrl,
   mal_id: id,
-  publishing_end: endDate,
-  publishing_start: startDate,
+  published: { from: startDate, to: endDate },
   rank,
   score,
   title,
   type,
-  url
+  link_canonical: url
 }) => ({
   id,
   endDate,
@@ -38,7 +37,7 @@ const Detail = types
     setManga: flow(function*(id) {
       const manga = filterKeys(yield request.getManga(id));
 
-      self.manga = Manga.create(manga);
+      self.manga = manga;
     })
   }));
 
