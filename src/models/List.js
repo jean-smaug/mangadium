@@ -39,7 +39,7 @@ export const Manga = types.model("Manga", {
 const List = types
   .model({
     current: types.maybeNull(Manga),
-    list: types.optional(types.array(Manga), [])
+    mangas: types.optional(types.array(Manga), [])
   })
   .actions(self => ({
     afterCreate() {
@@ -49,15 +49,10 @@ const List = types
       try {
         const mangas = (yield request.getTopMangas()).map(filterKeys);
 
-        applySnapshot(self.list, mangas);
+        applySnapshot(self.mangas, mangas);
       } catch (error) {
         console.log(error);
       }
-    }),
-    setCurrentManga: flow(function*(id) {
-      const manga = filterKeys(yield request.getManga(id));
-
-      self.current = Manga.create(manga);
     })
   }));
 

@@ -1,6 +1,6 @@
 import { types, flow, applySnapshot } from "mobx-state-tree";
 
-const filterKeys = ({
+export const filterKeys = ({
   image_url: imageUrl,
   mal_id: id,
   publishing_end: endDate,
