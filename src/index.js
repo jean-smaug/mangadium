@@ -15,8 +15,8 @@ import Search from "./modules/Search";
 ReactDOM.render(
   <Provider {...store}>
     <div>
-      <List />
       <Search />
+      <List />
       <Detail />
     </div>
   </Provider>,

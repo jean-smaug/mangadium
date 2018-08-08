@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { observer, inject } from "mobx-react";
 
+import Card from "../components/Card";
 import ViewToggler from "../components/ViewToggler";
 
 @inject("detail")
@@ -11,7 +12,7 @@ class Detail extends Component {
 
     return (
       <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleStatus}>
-        Hello
+        <Card {...detail.manga} />
       </ViewToggler>
     );
   }

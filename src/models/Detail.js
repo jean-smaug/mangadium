@@ -27,7 +27,7 @@ const filterKeys = ({
 
 const Detail = types
   .model({
-    manga: types.optional(types.map(Manga), {}),
+    manga: types.maybeNull(Manga),
     isOpen: types.optional(types.boolean, false)
   })
   .actions(self => ({
@@ -38,6 +38,8 @@ const Detail = types
       const manga = filterKeys(yield request.getManga(id));
 
       self.manga = manga;
+
+      self.toggleStatus();
     })
   }));
 
