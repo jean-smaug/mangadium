@@ -2,6 +2,8 @@ importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js"
 );
 
+workbox.core.setLogLevel(workbox.core.LOG_LEVELS.silent);
+
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`);
 } else {

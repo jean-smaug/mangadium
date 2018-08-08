@@ -3,20 +3,20 @@ import { observer, inject } from "mobx-react";
 
 import Card from "../components/Card";
 
-@inject("manga")
+@inject("list")
 @observer
 class Manga extends Component {
   render() {
-    const { current } = this.props.manga;
+    const { current } = this.props.list;
     return (
       <Fragment>
         {current !== null ? (
           <div>Hello</div>
         ) : (
           <div className="columns is-multiline">
-            {this.props.manga.list.map(manga => (
+            {this.props.list.list.map(item => (
               <div
-                key={manga.id}
+                key={item.id}
                 style={{
                   height: "200px",
                   overflow: "hidden",
@@ -24,11 +24,11 @@ class Manga extends Component {
                 }}
                 className="column is-half"
                 onClick={() => {
-                  console.log(manga);
-                  this.props.manga.setCurrentManga(manga.id);
+                  console.log(item);
+                  this.props.item.setCurrentManga(item.id);
                 }}
               >
-                <Card {...manga} />
+                <Card {...item} />
               </div>
             ))}
           </div>

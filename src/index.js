@@ -7,11 +7,15 @@ import "bulma/css/bulma.min.css";
 
 import store from "./store";
 
-import Manga from "./modules/Manga";
+import List from "./modules/List";
+import Detail from "./modules/Detail";
 
 ReactDOM.render(
   <Provider {...store}>
-    <Manga />
+    <div>
+      <List />
+      <Detail />
+    </div>
   </Provider>,
   document.getElementById("app")
 );
