@@ -1206,6 +1206,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5
@@ -3657,6 +3661,10 @@ mobx@5.0.3:
   version "5.0.3"
   resolved mobx-5.0.3.tgz#53b97f2a0f9b0dd7774c96249f81bf2d513d8e1c
 
+moment@2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
 ms@2.0.0:
   version "2.0.0"
   resolved ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8
@@ -4213,6 +4221,10 @@ pn@^1.1.0:
   version "1.1.0"
   resolved pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb
 
+popper.js@^1.14.1:
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab
@@ -4732,7 +4744,7 @@ prompts@^0.1.9:
     kleur "^1.0.0"
     sisteransi "^0.1.1"
 
-prop-types@15.6.2, prop-types@^15.6.0:
+prop-types@15.6.2, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.2"
   resolved prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102
   dependencies:
@@ -4838,6 +4850,15 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-datepicker@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-1.6.0.tgz#6b7a87e949f3bbd94872554be6a0119bd908a987"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    react-onclickoutside "^6.7.1"
+    react-popper "^0.9.1"
+
 react-dom@16.4.1:
   version "16.4.1"
   resolved react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6
@@ -4850,6 +4871,17 @@ react-dom@16.4.1:
 react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362
+
+react-onclickoutside@^6.7.1:
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
+
+react-popper@^0.9.1:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.9.5.tgz#02a24ef3eec33af9e54e8358ab70eb0e331edd05"
+  dependencies:
+    popper.js "^1.14.1"
+    prop-types "^15.6.1"
 
 react@16.4.1:
   version "16.4.1"

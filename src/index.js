@@ -1,19 +1,22 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "mobx-react";
 import "babel-polyfill";
 
 import "bulma/css/bulma.min.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import store from "./store";
 
 import List from "./modules/List";
 import Detail from "./modules/Detail";
+import Search from "./modules/Search";
 
 ReactDOM.render(
   <Provider {...store}>
     <div>
       <List />
+      <Search />
       <Detail />
     </div>
   </Provider>,
