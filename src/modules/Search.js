@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
+import { observer, inject } from "mobx-react";
 
+@inject("search")
+@observer
 class Search extends Component {
   state = {
     startDate: moment()
   };
+
+  search() {
+    // this.props.search.search();
+  }
 
   handleStartDateChange = date => {
     this.setState({
@@ -16,7 +23,11 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav
+          className="navbar is-dark"
+          role="navigation"
+          aria-label="main navigation"
+        >
           <div className="navbar-brand">
             <a className="navbar-item" href="/">
               Mangadium

@@ -13,17 +13,23 @@ class Detail extends Component {
 
     return (
       <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleStatus}>
-        {detail.manga && (
-          <div>
-            <Card {...detail.manga} />
+        <div className="container">
+          {detail.manga && (
+            <div>
+              {JSON.stringify(detail.manga)}
 
-            {detail.manga.images.map(image => (
-              <figure class="image is-128x128">
-                <img src={image} />
-              </figure>
-            ))}
-          </div>
-        )}
+              <div class="columns" style={{ overflowX: "scroll" }}>
+                {detail.manga.images.map(image => (
+                  <div class="column is-one-quarter">
+                    <figure class="image is-3by5">
+                      <img src={image} />
+                    </figure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </ViewToggler>
     );
   }
