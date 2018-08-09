@@ -6,8 +6,8 @@ const Search = types
     endDate: types.optional(types.string, "")
   })
   .actions(self => ({
-    search() {
-      console.log("searhc ip");
+    search(e) {
+      console.log("searhc ip", e.target.value);
     }
   }));
 

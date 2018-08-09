@@ -21,6 +21,7 @@ class Search extends Component {
   };
 
   render() {
+    const { search } = this.props;
     return (
       <div>
         <nav
@@ -32,6 +33,17 @@ class Search extends Component {
             <a className="navbar-item" href="/">
               Mangadium
             </a>
+
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Search..."
+                  onChange={search.search}
+                />
+              </div>
+            </div>
 
             <a
               role="button"
