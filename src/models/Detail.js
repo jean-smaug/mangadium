@@ -13,7 +13,8 @@ const filterKeys = ({
   title,
   type,
   link_canonical: url,
-  image: images
+  image: images,
+  synopsis
 }) => ({
   id,
   endDate,
@@ -24,7 +25,8 @@ const filterKeys = ({
   rank,
   score,
   type,
-  images
+  images,
+  synopsis
 });
 
 const Detail = types

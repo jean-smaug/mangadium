@@ -9,7 +9,8 @@ export const filterKeys = ({
   score,
   title,
   type,
-  url
+  url,
+  synopsis
 }) => ({
   id,
   endDate,
@@ -19,7 +20,8 @@ export const filterKeys = ({
   url,
   rank,
   score,
-  type
+  type,
+  synopsis
 });
 
 const Manga = types.model({
@@ -32,7 +34,8 @@ const Manga = types.model({
   rank: types.number,
   score: types.maybeNull(types.number),
   type: types.string,
-  images: types.optional(types.array(types.string), [])
+  images: types.optional(types.array(types.string), []),
+  synopsis: types.string
 });
 
 export default Manga;

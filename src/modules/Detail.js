@@ -8,8 +8,10 @@ import ViewToggler from "../components/ViewToggler";
 @observer
 class Detail extends Component {
   render() {
-    const { detail } = this.props;
-    console.log(detail);
+    const {
+      detail,
+      detail: { manga }
+    } = this.props;
 
     return (
       <ViewToggler
@@ -17,14 +19,17 @@ class Detail extends Component {
         onClose={detail.toggleVisibilityStatus}
       >
         <div className="container">
-          {detail.manga && (
+          {manga && (
             <div>
-              {JSON.stringify(detail.manga)}
+              <h2 className="title is-2">{manga.title}</h2>
+              <div className="content">
+                <p>{manga.synopsis}</p>
+              </div>
 
-              <div class="columns" style={{ overflowX: "scroll" }}>
-                {detail.manga.images.map(image => (
-                  <div class="column is-one-quarter">
-                    <figure class="image is-3by5">
+              <div className="columns" style={{ overflowX: "scroll" }}>
+                {manga.images.map(image => (
+                  <div key={image} className="column is-one-quarter">
+                    <figure className="image is-3by5">
                       <img src={image} />
                     </figure>
                   </div>
