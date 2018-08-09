@@ -12,7 +12,10 @@ class Detail extends Component {
     console.log(detail);
 
     return (
-      <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleStatus}>
+      <ViewToggler
+        isVisible={detail.isOpen}
+        onClose={detail.toggleVisibilityStatus}
+      >
         <div className="container">
           {detail.manga && (
             <div>

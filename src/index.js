@@ -6,19 +6,12 @@ import "babel-polyfill";
 import "bulma/css/bulma.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+import App from "./App";
 import store from "./store";
 
-import List from "./modules/List";
-import Detail from "./modules/Detail";
-import Search from "./modules/Search";
-
 ReactDOM.render(
-  <Provider {...store}>
-    <div>
-      <Search />
-      <List />
-      <Detail />
-    </div>
+  <Provider {...store} isLoading={store.isLoading}>
+    <App />
   </Provider>,
   document.getElementById("app")
 );

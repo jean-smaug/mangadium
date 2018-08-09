@@ -1,4 +1,4 @@
-import { types, flow, applySnapshot } from "mobx-state-tree";
+import { types, flow, getParent } from "mobx-state-tree";
 
 import request from "../utils/request";
 
@@ -33,18 +33,23 @@ const Detail = types
     isOpen: types.optional(types.boolean, false)
   })
   .actions(self => ({
-    toggleStatus() {
+    toggleVisibilityStatus() {
       self.isOpen = !self.isOpen;
     },
     setManga: flow(function*(id) {
+      const appStore = getParent(self).app;
+
       try {
+        appStore.toggleLoadingStatus();
+
         const manga = yield request.getMangaAndPicture(id);
-        console.log(manga);
         self.manga = filterKeys(manga);
 
-        self.toggleStatus();
+        appStore.toggleLoadingStatus();
+        self.toggleVisibilityStatus();
       } catch (error) {
         console.error(error);
+        appStore.toggleLoadingStatus();
       }
     })
   }));
