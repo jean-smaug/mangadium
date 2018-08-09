@@ -10,20 +10,6 @@ const Manga = types.model({
   score: types.number
 });
 
-const MangaOld = types.model({
-  id: types.number,
-  title: types.string,
-  imageUrl: types.string,
-  startDate: types.string,
-  endDate: types.maybeNull(types.string),
-  url: types.string,
-  rank: types.number,
-  score: types.maybeNull(types.number),
-  type: types.string,
-  images: types.optional(types.array(types.string), []),
-  synopsis: types.string
-});
-
 export default Manga;
 
 // const top = {

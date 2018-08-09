@@ -29,9 +29,17 @@ const filterKeys = ({
   synopsis
 });
 
+const MangaDetail = types.compose(
+  Manga,
+  types.model({
+    images: types.optional(types.array(types.string), []),
+    synopsis: types.string
+  })
+);
+
 const Detail = types
   .model({
-    manga: types.maybeNull(Manga),
+    manga: types.maybeNull(MangaDetail),
     isOpen: types.optional(types.boolean, false)
   })
   .actions(self => ({
@@ -44,8 +52,8 @@ const Detail = types
       try {
         appStore.toggleLoadingStatus();
 
-        const manga = yield request.getMangaAndPicture(id);
-        self.manga = filterKeys(manga);
+        const manga = yield request.getMangaAndPictures(id);
+        self.manga = manga;
 
         appStore.toggleLoadingStatus();
         self.toggleVisibilityStatus();

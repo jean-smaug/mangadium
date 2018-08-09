@@ -1,4 +1,4 @@
-export const transformTopManga = ({
+export const transformManga = ({
   mal_id: id,
   rank,
   url,
@@ -14,4 +14,26 @@ export const transformTopManga = ({
   title,
   publicationStartDate,
   score
+});
+
+export const transformMangaDetail = ({
+  mal_id: id,
+  rank,
+  link_canonical: url,
+  image_url: imageUrl,
+  title,
+  published: { from: publicationStartDate },
+  image: images,
+  synopsis,
+  score
+}) => ({
+  id,
+  publicationStartDate,
+  title,
+  imageUrl,
+  url,
+  rank,
+  score,
+  images,
+  synopsis
 });

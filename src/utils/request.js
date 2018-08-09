@@ -1,4 +1,4 @@
-import { transformTopManga } from "./transformers";
+import { transformManga, transformMangaDetail } from "./transformers";
 
 class Request {
   constructor(baseUrl = "https://api.jikan.moe") {
@@ -10,15 +10,15 @@ class Request {
   }
 
   async getTopMangas() {
-    return (await this.jsonFetch("/top/manga")).top.map(transformTopManga);
+    return (await this.jsonFetch("/top/manga")).top.map(transformManga);
   }
 
   async getManga(id) {
     return await this.jsonFetch(`/manga/${id}`);
   }
 
-  async getMangaAndPicture(id) {
-    return await this.jsonFetch(`/manga/${id}/pictures`);
+  async getMangaAndPictures(id) {
+    return transformMangaDetail(await this.jsonFetch(`/manga/${id}/pictures`));
   }
 
   async searchMangas(query, page = 1) {
