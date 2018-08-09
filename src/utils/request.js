@@ -1,3 +1,5 @@
+import { transformTopManga } from "./transformers";
+
 class Request {
   constructor(baseUrl = "https://api.jikan.moe") {
     this.baseUrl = baseUrl;
@@ -8,7 +10,7 @@ class Request {
   }
 
   async getTopMangas() {
-    return (await this.jsonFetch("/top/manga")).top;
+    return (await this.jsonFetch("/top/manga")).top.map(transformTopManga);
   }
 
   async getManga(id) {

@@ -6,9 +6,7 @@ const App = types
   })
   .actions(self => ({
     toggleLoadingStatus() {
-      console.log(self.isLoading);
       self.isLoading = !self.isLoading;
-      console.log(self.isLoading);
     }
   }));
 

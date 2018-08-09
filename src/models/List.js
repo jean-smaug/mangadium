@@ -1,40 +1,7 @@
 import { types, flow, applySnapshot } from "mobx-state-tree";
 
+import Manga from "./Manga";
 import request from "../utils/request";
-
-const filterKeys = ({
-  image_url: imageUrl,
-  mal_id: id,
-  publishing_end: endDate,
-  publishing_start: startDate,
-  rank,
-  score,
-  title,
-  type,
-  url
-}) => ({
-  id,
-  endDate,
-  startDate,
-  title,
-  imageUrl,
-  url,
-  rank,
-  score,
-  type
-});
-
-export const Manga = types.model("Manga", {
-  id: types.number,
-  title: types.string,
-  imageUrl: types.string,
-  startDate: types.string,
-  endDate: types.maybeNull(types.string),
-  url: types.string,
-  rank: types.number,
-  score: types.maybeNull(types.number),
-  type: types.string
-});
 
 const List = types
   .model({
@@ -46,7 +13,7 @@ const List = types
     },
     hyrdate: flow(function*() {
       try {
-        const mangas = (yield request.getTopMangas()).map(filterKeys);
+        const mangas = yield request.getTopMangas();
 
         applySnapshot(self.mangas, mangas);
       } catch (error) {
