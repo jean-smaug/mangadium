@@ -6,4 +6,4 @@ before_script:
   - yarn install
 
 script:
-  - echo "Oui"
+  - yarn test:coverage
