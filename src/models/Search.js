@@ -15,8 +15,8 @@ const Search = types
 
       const listStore = getParent(self).list;
 
-      request.searchMangas({ q: encodeURI(searchedManga) }).then(mangas => {
-        console.log(mangas);
+      console.log(encodeURI(searchedManga));
+      request.searchMangas(encodeURI(searchedManga)).then(mangas => {
         listStore.setMangas(mangas);
       });
     }

@@ -14,8 +14,10 @@ class App extends Component {
       <div>
         {this.props.app.isLoading && <Loader />}
         <Search />
-        <List />
-        <Detail />
+        <div style={{ marginTop: "20px" }}>
+          <List />
+          <Detail />
+        </div>
       </div>
     );
   }

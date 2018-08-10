@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 import { observer, inject } from "mobx-react";
 
+import "../utils/burgerButtonToggle";
 @inject("search")
 @observer
 class Search extends Component {
@@ -41,25 +42,6 @@ class Search extends Component {
               Mangadium
             </a>
 
-            <div
-              style={{ transform: "translateY(8px)" }}
-              className="field has-addons"
-            >
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Search..."
-                  onChange={this.handleSearchedString}
-                />
-              </div>
-              <div className="control">
-                <a className="button is-info" onClick={this.search}>
-                  Search
-                </a>
-              </div>
-            </div>
-
             <a
               role="button"
               className="navbar-burger"
@@ -71,23 +53,45 @@ class Search extends Component {
               <span aria-hidden="true" />
             </a>
           </div>
+          <div className="navbar-menu">
+            <div
+              className="navbar-end"
+              style={{ transform: "translate(-15px, 8px)" }}
+            >
+              <div className="field">
+                <DatePicker
+                  selected={this.state.startDate}
+                  onChange={this.handleStartDateChange}
+                  popperPlacement="bottom-end"
+                />
+              </div>
+              <div className="field">
+                <div className="select">
+                  <select>
+                    {[...Array(10).keys()].map((_, i) => (
+                      <option key={i}>{i + 1}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className="field has-addons">
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Search..."
+                    onChange={this.handleSearchedString}
+                  />
+                </div>
+                <div className="control">
+                  <a className="button is-info" onClick={this.search}>
+                    Search
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </nav>
-        <div className="field">
-          <div className="select">
-            <select>
-              {[...Array(10).keys()].map((_, i) => (
-                <option key={i}>{i + 1}</option>
-              ))}
-            </select>
-          </div>
-          <div className="field">
-            <DatePicker
-              selected={this.state.startDate}
-              onChange={this.handleStartDateChange}
-              popperPlacement="bottom-end"
-            />
-          </div>
-        </div>
       </div>
     );
   }
