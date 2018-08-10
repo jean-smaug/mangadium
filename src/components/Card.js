@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import { func } from "prop-types";
 
 import { MangaPropTypes } from "../models/Manga";
+import style from "../utils/style";
 
 class Card extends Component {
-  static propTypes = MangaPropTypes;
+  static propTypes = { ...MangaPropTypes, onClick: func };
 
   render() {
-    const { rank, score, imageUrl, title, publicationStartDate } = this.props;
+    const {
+      rank,
+      score,
+      imageUrl,
+      title,
+      publicationStartDate,
+      onClick
+    } = this.props;
 
     return (
-      <div className="card">
+      <div className="card" onClick={onClick}>
         <div className="card-image" style={{ position: "relative" }}>
           <div
             style={{
@@ -18,11 +27,13 @@ class Card extends Component {
               borderRadius: "50%",
               width: "30px",
               height: "30px",
-              color: "black",
+              color: "white",
+              fontWeight: "bold",
               top: "10px",
               right: "10px",
               zIndex: "10000",
-              textAlign: "center"
+              textAlign: "center",
+              background: style.transparentBackground
             }}
           >
             {rank}

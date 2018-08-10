@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactLoader from "react-loader-spinner";
 
-import css from "../utils/css";
+import style from "../utils/style";
+
 class Loader extends Component {
   render() {
     return (
@@ -12,7 +13,7 @@ class Loader extends Component {
           left: 0,
           bottom: 0,
           right: 0,
-          background: css.blackBackground,
+          background: style.transparentBackground,
           zIndex: 10000,
           display: "flex",
           alignItems: "center",
