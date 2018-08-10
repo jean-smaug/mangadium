@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import { Manga } from "../utils/propTypes";
+import { MangaPropTypes } from "../models/Manga";
 
 class Card extends Component {
-  static propTypes = Manga;
+  static propTypes = MangaPropTypes;
 
   render() {
     const { rank, score, imageUrl, title, publicationStartDate } = this.props;
