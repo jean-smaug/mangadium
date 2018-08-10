@@ -22,7 +22,9 @@ class Request {
   }
 
   async searchMangas(query, page = 1) {
-    return await this.jsonFetch(`/search/manga?q=${query}&page=${page}`);
+    return (await this.jsonFetch(
+      `/search/manga?q=${query}&page=${page}`
+    )).result.map(transformManga);
   }
 }
 

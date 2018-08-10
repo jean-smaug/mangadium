@@ -4,7 +4,7 @@ import { types } from "mobx-state-tree";
 // Manga
 export const MangaPropTypes = {
   id: number.isRequired,
-  rank: number.isRequired,
+  rank: number,
   score: number,
   url: string.isRequired,
   imageUrl: string.isRequired,
@@ -13,13 +13,13 @@ export const MangaPropTypes = {
 };
 
 export const Manga = types.model({
-  id: types.identifierNumber,
-  rank: types.number,
+  id: types.maybeNull(types.identifierNumber),
+  rank: types.maybeNull(types.number),
   score: types.maybeNull(types.number),
   url: types.string,
-  imageUrl: types.string,
+  imageUrl: types.maybeNull(types.string),
   title: types.string,
-  publicationStartDate: types.string
+  publicationStartDate: types.maybeNull(types.string)
 });
 
 // Manga Detail

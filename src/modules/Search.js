@@ -7,11 +7,18 @@ import { observer, inject } from "mobx-react";
 @observer
 class Search extends Component {
   state = {
+    search: "",
     startDate: moment()
   };
 
-  search = ({ target: { value } }) => {
-    this.props.search.search(value);
+  handleSearchedString = ({ target: { value: search } }) => {
+    this.setState({
+      search
+    });
+  };
+
+  search = () => {
+    this.props.search.search(this.state.search);
   };
 
   handleStartDateChange = date => {
@@ -43,11 +50,13 @@ class Search extends Component {
                   className="input"
                   type="text"
                   placeholder="Search..."
-                  onChange={this.search}
+                  onChange={this.handleSearchedString}
                 />
               </div>
               <div className="control">
-                <a className="button is-info">Search</a>
+                <a className="button is-info" onClick={this.search}>
+                  Search
+                </a>
               </div>
             </div>
 

@@ -13,14 +13,13 @@ class Manga extends Component {
         <div className="container">
           <div className="columns is-multiline">
             {list.mangas.map(item => (
-              <div
-                key={item.id}
-                className="column is-one-fifth"
-                onClick={() => {
-                  detail.setManga(item.id);
-                }}
-              >
-                <Card {...item} />
+              <div key={item.id} className="column is-one-fifth">
+                <Card
+                  {...item}
+                  onClick={() => {
+                    detail.setManga(item.id);
+                  }}
+                />
               </div>
             ))}
           </div>

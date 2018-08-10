@@ -1,4 +1,4 @@
-import { types } from "mobx-state-tree";
+import { types, getParent } from "mobx-state-tree";
 
 import request from "../utils/request";
 
@@ -12,7 +12,13 @@ const Search = types
       if (searchedManga.length < 3) {
         return;
       }
-      request.searchMangas({ q: encodeURI(searchedManga) }).then(console.log);
+
+      const listStore = getParent(self).list;
+
+      request.searchMangas({ q: encodeURI(searchedManga) }).then(mangas => {
+        console.log(mangas);
+        listStore.setMangas(mangas);
+      });
     }
   }));
 

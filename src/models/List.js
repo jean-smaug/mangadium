@@ -15,11 +15,15 @@ const List = types
       try {
         const mangas = yield request.getTopMangas();
 
-        applySnapshot(self.mangas, mangas);
+        self.setMangas(mangas);
       } catch (error) {
         console.log(error);
       }
-    })
+    }),
+    setMangas(mangas) {
+      console.log("mangas", mangas);
+      applySnapshot(self.mangas, mangas);
+    }
   }));
 
 export default List;
