@@ -4,8 +4,8 @@ import request from "../utils/request";
 
 const Search = types
   .model({
-    startDate: types.optional(types.string, ""),
-    endDate: types.optional(types.string, "")
+    startDate: types.frozen(),
+    endDate: types.frozen()
   })
   .actions(self => ({
     search(searchedManga) {
@@ -21,6 +21,12 @@ const Search = types
         appStore.toggleLoadingStatus();
         listStore.setMangas(mangas);
       });
+    },
+    setStartDate(startDate) {
+      self.startDate = startDate;
+    },
+    setEndDate(endDate) {
+      self.endDate = endDate;
     }
   }));
 

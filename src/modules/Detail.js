@@ -23,11 +23,27 @@ class Detail extends Component {
         <div className="container">
           {manga && (
             <div>
-              <h2 className="title is-2">{manga.title}</h2>
+              <h2 className="title is-2">
+                <a href={manga.url} target="_blank">
+                  {manga.title}
+                </a>
+              </h2>
+              <p className="subtitle">
+                {manga.authors.map(
+                  (author, index, array) =>
+                    `${author}${index !== array.length - 1 ? " & " : ""}`
+                )}
+              </p>
+              <div className="content">
+                {manga.genres.map(genre => (
+                  <span class="tag is-dark" style={{ marginLeft: "3px" }}>
+                    {genre}
+                  </span>
+                ))}
+              </div>
               <div className="content">
                 <p>{manga.synopsis}</p>
               </div>
-
               <div className="columns" style={{ overflowX: "scroll" }}>
                 {manga.images.map(image => (
                   <div key={image} className="column is-one-quarter">

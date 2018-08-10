@@ -20,24 +20,26 @@ class Card extends Component {
     return (
       <div className="card" onClick={onClick}>
         <div className="card-image" style={{ position: "relative" }}>
-          <div
-            style={{
-              position: "absolute",
-              border: "2px solid black",
-              borderRadius: "50%",
-              width: "30px",
-              height: "30px",
-              color: "white",
-              fontWeight: "bold",
-              top: "10px",
-              right: "10px",
-              zIndex: "10000",
-              textAlign: "center",
-              background: style.transparentBackground
-            }}
-          >
-            {rank}
-          </div>
+          {rank && (
+            <div
+              style={{
+                position: "absolute",
+                border: "2px solid black",
+                borderRadius: "50%",
+                width: "30px",
+                height: "30px",
+                color: "white",
+                fontWeight: "bold",
+                top: "10px",
+                right: "10px",
+                zIndex: "10000",
+                textAlign: "center",
+                background: style.transparentBackground
+              }}
+            >
+              {rank}
+            </div>
+          )}
           <figure className="image is-4by3">
             <img src={imageUrl} alt={imageUrl} />
           </figure>

@@ -25,7 +25,9 @@ export const transformMangaDetail = ({
   published: { from: publicationStartDate },
   image: images,
   synopsis,
-  score
+  score,
+  genre: genres,
+  author: authors
 }) => ({
   id,
   publicationStartDate,
@@ -35,5 +37,7 @@ export const transformMangaDetail = ({
   rank,
   score,
   images,
-  synopsis
+  synopsis,
+  genres: genres.map(genre => genre.name),
+  authors: authors.map(author => author.name)
 });

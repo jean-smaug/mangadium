@@ -27,9 +27,8 @@ class Search extends Component {
   };
 
   handleStartDateChange = date => {
-    this.setState({
-      startDate: date
-    });
+    console.log(date);
+    this.props.search.setStartDate(date);
   };
 
   render() {
@@ -64,12 +63,12 @@ class Search extends Component {
             >
               <div className="field">
                 <DatePicker
-                  selected={this.state.startDate}
+                  selected={search.startDate}
                   onChange={this.handleStartDateChange}
                   popperPlacement="bottom-end"
                 />
               </div>
-              <div className="field">
+              {/* <div className="field">
                 <div className="select">
                   <select>
                     {[...Array(10).keys()].map((_, i) => (
@@ -77,7 +76,7 @@ class Search extends Component {
                     ))}
                   </select>
                 </div>
-              </div>
+              </div> */}
               <div className="field has-addons">
                 <div className="control">
                   <input
