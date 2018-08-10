@@ -19,6 +19,8 @@ const store = types
     search: Search.create()
   });
 
-addMiddleware(store, connectReduxDevtools(require("remotedev"), store));
+if (process.env.NODE_ENV !== "production") {
+  addMiddleware(store, connectReduxDevtools(require("remotedev"), store));
+}
 
 export default store;
