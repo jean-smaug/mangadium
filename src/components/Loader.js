@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactLoader from "react-loader-spinner";
 
+import css from "../utils/css";
 class Loader extends Component {
   render() {
     return (
@@ -11,7 +12,7 @@ class Loader extends Component {
           left: 0,
           bottom: 0,
           right: 0,
-          background: "rgba(0, 0, 0, 0.6)",
+          background: css.blackBackground,
           zIndex: 10000,
           display: "flex",
           alignItems: "center",

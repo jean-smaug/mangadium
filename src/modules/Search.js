@@ -10,9 +10,9 @@ class Search extends Component {
     startDate: moment()
   };
 
-  search() {
-    // this.props.search.search();
-  }
+  search = ({ target: { value } }) => {
+    this.props.search.search(value);
+  };
 
   handleStartDateChange = date => {
     this.setState({
@@ -40,7 +40,7 @@ class Search extends Component {
                   class="input"
                   type="text"
                   placeholder="Search..."
-                  onChange={search.search}
+                  onChange={this.search}
                 />
               </div>
             </div>

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
+import css from "../utils/css";
 class ViewToggler extends Component {
   render() {
     return (
       <div
         style={{
-          background: "rgba(0, 0, 0, 0.4)",
+          background: css.blackBackground,
           position: "fixed",
           top: 0,
           zIndex: 10000,
