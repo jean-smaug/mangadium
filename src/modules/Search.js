@@ -34,7 +34,10 @@ class Search extends Component {
               Mangadium
             </a>
 
-            <div className="field">
+            <div
+              style={{ transform: "translateY(8px)" }}
+              className="field has-addons"
+            >
               <div className="control">
                 <input
                   className="input"
@@ -42,6 +45,9 @@ class Search extends Component {
                   placeholder="Search..."
                   onChange={this.search}
                 />
+              </div>
+              <div className="control">
+                <a className="button is-info">Search</a>
               </div>
             </div>
 

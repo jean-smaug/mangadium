@@ -1,15 +1,7 @@
 import { types, flow, getParent } from "mobx-state-tree";
 
-import Manga from "./Manga";
+import { MangaDetail } from "./Manga";
 import request from "../utils/request";
-
-const MangaDetail = types.compose(
-  Manga,
-  types.model({
-    images: types.optional(types.array(types.string), []),
-    synopsis: types.string
-  })
-);
 
 const Detail = types
   .model({

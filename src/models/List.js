@@ -1,6 +1,6 @@
 import { types, flow, applySnapshot } from "mobx-state-tree";
 
-import Manga from "./Manga";
+import { Manga } from "./Manga";
 import request from "../utils/request";
 
 const List = types

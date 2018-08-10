@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { observer, inject } from "mobx-react";
 
+import { MangaDetailPropTypes } from "../models/Manga";
 import ViewToggler from "../components/ViewToggler";
 
 @inject("detail")
 @observer
 class Detail extends Component {
+  static propTypes = MangaDetailPropTypes;
+
   render() {
     const {
       detail,

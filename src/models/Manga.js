@@ -1,6 +1,7 @@
-import { number, string } from "prop-types";
+import { number, string, arrayOf } from "prop-types";
 import { types } from "mobx-state-tree";
 
+// Manga
 export const MangaPropTypes = {
   id: number.isRequired,
   rank: number.isRequired,
@@ -11,7 +12,7 @@ export const MangaPropTypes = {
   publicationStartDate: string.isRequired
 };
 
-const Manga = types.model({
+export const Manga = types.model({
   id: types.identifierNumber,
   rank: types.number,
   score: types.maybeNull(types.number),
@@ -21,7 +22,20 @@ const Manga = types.model({
   publicationStartDate: types.string
 });
 
-export default Manga;
+// Manga Detail
+export const MangaDetailPropTypes = {
+  ...MangaPropTypes,
+  images: arrayOf(string),
+  synopsis: string
+};
+
+export const MangaDetail = types.compose(
+  Manga,
+  types.model({
+    images: types.optional(types.array(types.string), []),
+    synopsis: types.string
+  })
+);
 
 // const top = {
 //   mal_id: 2,
