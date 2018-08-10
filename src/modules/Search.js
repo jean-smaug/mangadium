@@ -18,6 +18,10 @@ class Search extends Component {
     });
   };
 
+  reload = () => {
+    location.reload();
+  };
+
   search = () => {
     this.props.search.search(this.state.search);
   };
@@ -38,16 +42,9 @@ class Search extends Component {
           aria-label="main navigation"
         >
           <div className="navbar-brand">
-            <a
-              className="navbar-item"
-              href={
-                process.env.NODE_ENV === "production"
-                  ? "react-medium-manga"
-                  : "/"
-              }
-            >
+            <div className="navbar-item" onClick={this.reload}>
               Mangadium
-            </a>
+            </div>
 
             <a
               role="button"
