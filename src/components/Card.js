@@ -1,27 +1,40 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+
+import { Manga } from "../utils/propTypes";
 
 class Card extends Component {
-  static propTypes = {
-    image: PropTypes.string,
-    title: PropTypes.string,
-    synopsis: PropTypes.string,
-    startDate: PropTypes.string
-  };
+  static propTypes = Manga;
 
   render() {
-    const { title, imageUrl, startDate } = this.props;
+    const { rank, score, imageUrl, title, publicationStartDate } = this.props;
+
     return (
       <div className="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
+        <div className="card-image" style={{ position: "relative" }}>
+          <div
+            style={{
+              position: "absolute",
+              border: "2px solid black",
+              borderRadius: "50%",
+              width: "30px",
+              height: "30px",
+              color: "black",
+              top: "10px",
+              right: "10px",
+              zIndex: "10000",
+              textAlign: "center"
+            }}
+          >
+            {rank}
+          </div>
+          <figure className="image is-4by3">
             <img src={imageUrl} alt={imageUrl} />
           </figure>
         </div>
         <div className="card-content">
           <div className="content">
             <div
-              class="title is-4"
+              className="title is-4"
               title={title}
               style={{
                 lineHeight: "1em",
@@ -34,9 +47,9 @@ class Card extends Component {
             >
               {title}
             </div>
-            {/* <a href="#">#css</a> <a href="#">#responsive</a> */}
             <br />
-            <time dateTime={startDate}>{startDate}</time>
+            <time dateTime={publicationStartDate}>{publicationStartDate}</time>
+            <p>{score}</p>
           </div>
         </div>
       </div>
