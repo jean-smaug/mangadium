@@ -9,15 +9,15 @@ export const MangaPropTypes = {
   url: string.isRequired,
   imageUrl: string.isRequired,
   title: string.isRequired,
-  publicationStartDate: string.isRequired
+  publicationStartDate: string
 };
 
 export const Manga = types.model({
-  id: types.maybeNull(types.identifierNumber),
+  id: types.identifierNumber,
   rank: types.maybeNull(types.number),
   score: types.maybeNull(types.number),
   url: types.string,
-  imageUrl: types.maybeNull(types.string),
+  imageUrl: types.string,
   title: types.string,
   publicationStartDate: types.maybeNull(types.string)
 });
