@@ -12,11 +12,13 @@ const Search = types
       if (searchedManga.length < 3) {
         return;
       }
+      const rootStore = getParent(self);
+      const listStore = rootStore.list;
+      const appStore = rootStore.app;
 
-      const listStore = getParent(self).list;
-
-      console.log(encodeURI(searchedManga));
+      appStore.toggleLoadingStatus();
       request.searchMangas(encodeURI(searchedManga)).then(mangas => {
+        appStore.toggleLoadingStatus();
         listStore.setMangas(mangas);
       });
     }
