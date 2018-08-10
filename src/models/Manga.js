@@ -7,7 +7,7 @@ const Manga = types.model({
   imageUrl: types.string,
   title: types.string,
   publicationStartDate: types.string,
-  score: types.number
+  score: types.maybeNull(types.number)
 });
 
 export default Manga;

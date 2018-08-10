@@ -10,29 +10,30 @@ class Card extends Component {
   };
 
   render() {
-    const { title, imageUrl, synopsis, startDate } = this.props;
+    const { title, imageUrl, startDate } = this.props;
     return (
       <div className="card">
-        {/* <div className="card-image">
-          <figure className="image is-4by3">
-            <img src={image} alt="Placeholder image" />
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src={imageUrl} alt={imageUrl} />
           </figure>
-        </div> */}
+        </div>
         <div className="card-content">
-          <div className="media">
-            <div className="media-left">
-              <figure className="image is-48x48">
-                <img src={imageUrl} alt="Placeholder image" />
-              </figure>
-            </div>
-            <div className="media-content">
-              <p className="title is-4">{title}</p>
-              <p className="subtitle is-6">@johnsmith</p>
-            </div>
-          </div>
-
           <div className="content">
-            {synopsis}
+            <div
+              class="title is-4"
+              title={title}
+              style={{
+                lineHeight: "1em",
+                maxHeight: "2em",
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                width: "100%"
+              }}
+            >
+              {title}
+            </div>
             {/* <a href="#">#css</a> <a href="#">#responsive</a> */}
             <br />
             <time dateTime={startDate}>{startDate}</time>
