@@ -34,10 +34,10 @@ class Search extends Component {
               Mangadium
             </a>
 
-            <div class="field">
-              <div class="control">
+            <div className="field">
+              <div className="control">
                 <input
-                  class="input"
+                  className="input"
                   type="text"
                   placeholder="Search..."
                   onChange={this.search}
