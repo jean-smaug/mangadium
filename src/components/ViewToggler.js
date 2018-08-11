@@ -10,7 +10,7 @@ class ViewToggler extends Component {
           background: style.transparentBackground,
           position: "fixed",
           top: 0,
-          zIndex: 10000,
+          zIndex: style.zIndexMajor,
           width: "100vw",
           height: "100vh",
           visibility: this.props.isVisible ? "visible" : "hidden"

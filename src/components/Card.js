@@ -32,7 +32,7 @@ class Card extends Component {
                 fontWeight: "bold",
                 top: "10px",
                 right: "10px",
-                zIndex: "10000",
+                zIndex: style.zIndexMinor,
                 textAlign: "center",
                 background: style.transparentBackground
               }}

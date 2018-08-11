@@ -14,7 +14,7 @@ class Loader extends Component {
           bottom: 0,
           right: 0,
           background: style.transparentBackground,
-          zIndex: 10000,
+          zIndex: style.zIndexMedium,
           display: "flex",
           alignItems: "center",
           justifyContent: "center"
