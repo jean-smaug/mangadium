@@ -1,6 +1,13 @@
-# react-medium-manga
+# Mangadium
 
-app listant manga avec possibilité d'ajouter des manga fav (indexeddb)
-bulma, react, mobx-state-tree
+Documentation de l'API utilisée : https://jikan.docs.apiary.io/
 
-https://api.jikan.moe
+## Lancer l'application
+
+- `yarn install`
+- `yarn dev`
+- http://localhost:1234
+
+## Articles
+
+WIP...
