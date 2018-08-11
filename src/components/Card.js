@@ -6,16 +6,10 @@ import { MangaPropTypes } from '../models/Manga'
 import starIcon from '../images/star.png'
 
 class Card extends Component {
-  static propTypes = { ...MangaPropTypes, onClick: func };
+  static propTypes = { ...MangaPropTypes, onClick: func }
 
   render () {
-    const {
-      score,
-      imageUrl,
-      title,
-      publicationStartDate,
-      onClick
-    } = this.props
+    const { score, imageUrl, title, publicationStartDate, onClick } = this.props
 
     return (
       <div className='card' onClick={onClick}>
@@ -36,10 +30,7 @@ class Card extends Component {
               {title}
             </TextEllipsis>
             <div style={{ display: 'flex' }}>
-              <time
-                style={{ fontStyle: 'italic' }}
-                dateTime={publicationStartDate}
-              >
+              <time style={{ fontStyle: 'italic' }} dateTime={publicationStartDate}>
                 {publicationStartDate}
               </time>
               <div style={{ marginLeft: 'auto' }}>

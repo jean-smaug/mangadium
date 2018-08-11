@@ -6,7 +6,7 @@ import request from '../utils/request'
 
 export const DetailPropTypes = {
   manga: MangaDetailPropTypes,
-  isOpen: bool
+  isOpen: bool.isRequired
 }
 
 export const Detail = types

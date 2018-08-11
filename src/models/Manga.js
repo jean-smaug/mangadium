@@ -1,5 +1,5 @@
-import { number, string, arrayOf } from 'prop-types'
 import { types } from 'mobx-state-tree'
+import { number, string, arrayOf } from 'prop-types'
 
 // Manga
 export const MangaPropTypes = {

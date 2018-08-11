@@ -21,11 +21,16 @@ class Detail extends Component {
         <div className='container'>
           {manga && (
             <div>
-              <h2 className='title is-2'>
-                <a href={manga.url} target='_blank'>
-                  {manga.title}
-                </a>
-              </h2>
+              <div style={{ display: 'flex' }}>
+                <h2 className='title is-2'>
+                  <a href={manga.url} target='_blank'>
+                    {manga.title}
+                  </a>
+                </h2>
+                {/* <div className='title is-4' style={{ marginLeft: 'auto' }}>
+                  Classement : {manga.rank}
+                </div> */}
+              </div>
               <p className='subtitle'>{displayAuthors(manga.authors)}</p>
               <div className='content'>
                 {manga.genres.map(genre => (
