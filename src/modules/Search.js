@@ -3,62 +3,54 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import { observer, inject } from 'mobx-react'
 
+import { SearchPropTypes } from '../models/Search'
+
 @inject('search')
 @observer
 class Search extends Component {
+  static propTypes = SearchPropTypes
+
   state = {
     startDate: moment()
-  };
+  }
 
   handleSearchedString = ({ target: { value: research } }) => {
     this.props.search.setResearch(research)
-  };
+  }
 
   reload = () => {
     location.reload()
-  };
+  }
 
   search = e => {
     if (e.keyCode === 13 || e.target.type === 'submit') {
       this.props.search.search(this.state.search)
     }
-  };
+  }
 
   handleStartDateChange = date => {
     this.props.search.setStartDate(date)
-  };
+  }
 
   render () {
     const { search } = this.props
     return (
       <div>
-        <nav
-          className='navbar is-dark is-fixed-top'
-          role='navigation'
-          aria-label='main navigation'
-        >
+        <nav className='navbar is-dark is-fixed-top' role='navigation' aria-label='main navigation'>
           <div className='container'>
             <div className='navbar-brand'>
               <div className='navbar-item' onClick={this.reload}>
                 Mangadium
               </div>
 
-              <a
-                role='button'
-                className='navbar-burger'
-                aria-label='menu'
-                aria-expanded='false'
-              >
+              <a role='button' className='navbar-burger' aria-label='menu' aria-expanded='false'>
                 <span aria-hidden='true' />
                 <span aria-hidden='true' />
                 <span aria-hidden='true' />
               </a>
             </div>
             <div className='navbar-menu'>
-              <div
-                className='navbar-end'
-                style={{ transform: 'translateY(8px)' }}
-              >
+              <div className='navbar-end' style={{ transform: 'translateY(8px)' }}>
                 {/* <div className="field">
                 <DatePicker
                   selected={search.startDate}

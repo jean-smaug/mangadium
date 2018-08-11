@@ -6,11 +6,11 @@ class Request {
   constructor (baseUrl = 'https://api.jikan.moe') {
     this.baseUrl = baseUrl
     this.exclusion = encodeURI(
-      `genre[]=${GENRE.HENTAI}&genre[]=${GENRE.YURI}&genre[]=${
-        GENRE.YAOI
-      }&genre[]=${GENRE.GENDER_BENDER}&genre[]=${GENRE.SHOUNEN_AI}&genre[]=${
-        GENRE.SHOUJO_AI
-      }&genre[]=${GENRE.ECCHI}&genre[]=${GENRE.DOUJINSHI}&genre_exclude=1`
+      `genre[]=${GENRE.HENTAI}&genre[]=${GENRE.YURI}&genre[]=${GENRE.YAOI}&genre[]=${
+        GENRE.GENDER_BENDER
+      }&genre[]=${GENRE.SHOUNEN_AI}&genre[]=${GENRE.SHOUJO_AI}&genre[]=${GENRE.ECCHI}&genre[]=${
+        GENRE.DOUJINSHI
+      }&genre_exclude=1`
     )
   }
 
@@ -20,10 +20,6 @@ class Request {
 
   async getTopMangas () {
     return (await this.jsonFetch('/top/manga')).top.map(transformManga)
-  }
-
-  async getManga (id) {
-    return await this.jsonFetch(`/manga/${id}`)
   }
 
   async getMangaAndPictures (id) {

@@ -1,8 +1,15 @@
 import { types, getParent } from 'mobx-state-tree'
+import { string, object } from 'prop-types'
 
 import request from '../utils/request'
 
-const Search = types
+export const SearchPropTypes = {
+  research: string.isRequired,
+  startDate: object,
+  endDate: object
+}
+
+export const Search = types
   .model({
     research: types.optional(types.string, ''),
     startDate: types.frozen(),
@@ -38,5 +45,3 @@ const Search = types
       return self.research.length < 3
     }
   }))
-
-export default Search

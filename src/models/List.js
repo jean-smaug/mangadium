@@ -1,9 +1,11 @@
 import { types, flow, applySnapshot } from 'mobx-state-tree'
-
-import { Manga } from './Manga'
+import { arrayOf } from 'prop-types'
+import { Manga, MangaPropTypes } from './Manga'
 import request from '../utils/request'
 
-const List = types
+export const ListPropTypes = { mangas: arrayOf(MangaPropTypes) }
+
+export const List = types
   .model({
     mangas: types.optional(types.array(Manga), [])
   })

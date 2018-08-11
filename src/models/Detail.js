@@ -1,9 +1,15 @@
 import { types, flow, getParent } from 'mobx-state-tree'
+import { bool } from 'prop-types'
 
-import { MangaDetail } from './Manga'
+import { MangaDetail, MangaDetailPropTypes } from './Manga'
 import request from '../utils/request'
 
-const Detail = types
+export const DetailPropTypes = {
+  manga: MangaDetailPropTypes,
+  isOpen: bool
+}
+
+export const Detail = types
   .model({
     manga: types.maybeNull(MangaDetail),
     isOpen: types.optional(types.boolean, false)

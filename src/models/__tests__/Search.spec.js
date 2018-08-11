@@ -1,4 +1,4 @@
-import Search from '../Search'
+import { Search } from '../Search'
 
 describe('<=== Search ===>', () => {
   it('should create store', () => {})
