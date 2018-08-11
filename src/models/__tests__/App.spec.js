@@ -1,23 +1,19 @@
-import { Manga } from "../Manga";
+import App from "../App";
 
 describe("<=== Manga ===>", () => {
-  let manga = null;
+  let app = null;
 
   beforeEach(() => {
-    manga = Manga.create({
-      id: 43,
-      title: "One Piece",
-      imageUrl: "http://one-piece.jpg",
-      startDate: "13 aout 2016",
-      endDate: null,
-      url: "http://one-piece.fr",
-      rank: 1,
-      score: 9.12,
-      type: "shonen"
-    });
+    app = App.create();
   });
 
   it("should create store", () => {
-    expect(manga).toMatchSnapshot();
+    expect(app).toMatchSnapshot();
+  });
+
+  it("should toggle loading status", () => {
+    expect(app.isLoading).toBeFalsy();
+    app.toggleLoadingStatus();
+    expect(app.isLoading).toBeTruthy();
   });
 });

@@ -2,14 +2,24 @@
 
 exports[`<=== Manga ===> should create store 1`] = `
 Object {
-  "endDate": null,
   "id": 43,
   "imageUrl": "http://one-piece.jpg",
+  "publicationStartDate": "13 aout 2016",
   "rank": 1,
   "score": 9.12,
-  "startDate": "13 aout 2016",
   "title": "One Piece",
-  "type": "shonen",
+  "url": "http://one-piece.fr",
+}
+`;
+
+exports[`<=== Manga ===> should create store 2`] = `
+Object {
+  "id": 43,
+  "imageUrl": "http://one-piece.jpg",
+  "publicationStartDate": null,
+  "rank": null,
+  "score": null,
+  "title": "One Piece",
   "url": "http://one-piece.fr",
 }
 `;

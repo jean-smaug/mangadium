@@ -1,23 +1,28 @@
 import { Manga } from "../Manga";
 
+const fisrtManga = Manga.create({
+  id: 43,
+  rank: 1,
+  score: 9.12,
+  url: "http://one-piece.fr",
+  imageUrl: "http://one-piece.jpg",
+  title: "One Piece",
+  publicationStartDate: "13 aout 2016"
+});
+
+const secondManga = Manga.create({
+  id: 43,
+  rank: null,
+  score: null,
+  url: "http://one-piece.fr",
+  imageUrl: "http://one-piece.jpg",
+  title: "One Piece",
+  publicationStartDate: null
+});
+
 describe("<=== Manga ===>", () => {
-  let manga = null;
-
-  beforeEach(() => {
-    manga = Manga.create({
-      id: 43,
-      title: "One Piece",
-      imageUrl: "http://one-piece.jpg",
-      startDate: "13 aout 2016",
-      endDate: null,
-      url: "http://one-piece.fr",
-      rank: 1,
-      score: 9.12,
-      type: "shonen"
-    });
-  });
-
   it("should create store", () => {
-    expect(manga).toMatchSnapshot();
+    expect(fisrtManga).toMatchSnapshot();
+    expect(secondManga).toMatchSnapshot();
   });
 });

@@ -1,23 +1,13 @@
-import { Manga } from "../Manga";
+import Detail from "../Detail";
 
-describe("<=== Manga ===>", () => {
-  let manga = null;
+describe("<=== Detail ===>", () => {
+  let detail = null;
 
   beforeEach(() => {
-    manga = Manga.create({
-      id: 43,
-      title: "One Piece",
-      imageUrl: "http://one-piece.jpg",
-      startDate: "13 aout 2016",
-      endDate: null,
-      url: "http://one-piece.fr",
-      rank: 1,
-      score: 9.12,
-      type: "shonen"
-    });
+    detail = Detail.create();
   });
 
   it("should create store", () => {
-    expect(manga).toMatchSnapshot();
+    expect(detail).toMatchSnapshot();
   });
 });
