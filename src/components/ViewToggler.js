@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { func, bool, element } from 'prop-types'
-import style from '../utils/style'
+import styles from '../utils/styles'
 
 class ViewToggler extends Component {
   static propTypes = {
@@ -15,10 +15,10 @@ class ViewToggler extends Component {
     return (
       <div
         style={{
-          background: style.transparentBackground,
+          background: styles.transparentBackground,
           position: 'fixed',
           top: 0,
-          zIndex: style.zIndexMajor,
+          zIndex: styles.zIndexMajor,
           width: '100vw',
           height: '100vh',
           visibility: isVisible ? 'visible' : 'hidden'
