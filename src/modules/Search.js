@@ -8,26 +8,24 @@ import "../utils/burgerButtonToggle";
 @observer
 class Search extends Component {
   state = {
-    search: "",
     startDate: moment()
   };
 
-  handleSearchedString = ({ target: { value: search } }) => {
-    this.setState({
-      search
-    });
+  handleSearchedString = ({ target: { value: research } }) => {
+    this.props.search.setResearch(research);
   };
 
   reload = () => {
     location.reload();
   };
 
-  search = () => {
-    this.props.search.search(this.state.search);
+  search = e => {
+    if (e.keyCode === 13 || e.target.type === "submit") {
+      this.props.search.search(this.state.search);
+    }
   };
 
   handleStartDateChange = date => {
-    console.log(date);
     this.props.search.setStartDate(date);
   };
 
@@ -61,13 +59,13 @@ class Search extends Component {
               className="navbar-end"
               style={{ transform: "translate(-15px, 8px)" }}
             >
-              <div className="field">
+              {/* <div className="field">
                 <DatePicker
                   selected={search.startDate}
                   onChange={this.handleStartDateChange}
                   popperPlacement="bottom-end"
                 />
-              </div>
+              </div> */}
               {/* <div className="field">
                 <div className="select">
                   <select>
@@ -82,14 +80,21 @@ class Search extends Component {
                   <input
                     className="input"
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Chercher..."
+                    value={search.research}
                     onChange={this.handleSearchedString}
+                    onKeyUp={this.search}
                   />
                 </div>
                 <div className="control">
-                  <a className="button is-info" onClick={this.search}>
-                    Search
-                  </a>
+                  <button
+                    className="button is-info"
+                    onClick={this.search}
+                    disabled={search.isSearchDisabled}
+                    type="submit"
+                  >
+                    Chercher
+                  </button>
                 </div>
               </div>
             </div>

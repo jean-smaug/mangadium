@@ -4,12 +4,22 @@ import request from "../utils/request";
 
 const Search = types
   .model({
+    research: types.optional(types.string, ""),
     startDate: types.frozen(),
     endDate: types.frozen()
   })
   .actions(self => ({
-    search(searchedManga) {
-      if (searchedManga.length < 3) {
+    setResearch(research) {
+      self.research = research;
+    },
+    setStartDate(startDate) {
+      self.startDate = startDate;
+    },
+    setEndDate(endDate) {
+      self.endDate = endDate;
+    },
+    search() {
+      if (self.research.length < 3) {
         return;
       }
       const rootStore = getParent(self);
@@ -17,16 +27,15 @@ const Search = types
       const appStore = rootStore.app;
 
       appStore.toggleLoadingStatus();
-      request.searchMangas(encodeURI(searchedManga)).then(mangas => {
+      request.searchMangas(encodeURI(self.research)).then(mangas => {
         appStore.toggleLoadingStatus();
         listStore.setMangas(mangas);
       });
-    },
-    setStartDate(startDate) {
-      self.startDate = startDate;
-    },
-    setEndDate(endDate) {
-      self.endDate = endDate;
+    }
+  }))
+  .views(self => ({
+    get isSearchDisabled() {
+      return self.research.length < 3;
     }
   }));
 

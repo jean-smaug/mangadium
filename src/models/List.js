@@ -17,11 +17,10 @@ const List = types
 
         self.setMangas(mangas);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }),
     setMangas(mangas) {
-      console.log("mangas", mangas);
       applySnapshot(self.mangas, mangas);
     }
   }));
