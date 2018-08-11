@@ -3,12 +3,12 @@ import { observer, inject } from 'mobx-react'
 
 import { MangaDetailPropTypes } from '../models/Manga'
 import ViewToggler from '../components/ViewToggler'
-import { displayAuthors } from '../utils/render'
+import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 
 @inject('detail')
 @observer
 class Detail extends Component {
-  static propTypes = MangaDetailPropTypes;
+  static propTypes = MangaDetailPropTypes
 
   render () {
     const {
@@ -17,10 +17,7 @@ class Detail extends Component {
     } = this.props
 
     return (
-      <ViewToggler
-        isVisible={detail.isOpen}
-        onClose={detail.toggleVisibilityStatus}
-      >
+      <ViewToggler isVisible={detail.isOpen} onClose={detail.toggleVisibilityStatus}>
         <div className='container'>
           {manga && (
             <div>
@@ -38,7 +35,7 @@ class Detail extends Component {
                 ))}
               </div>
               <div className='content'>
-                <p>{manga.synopsis}</p>
+                <p>{convertSpecialCharsToText(manga.synopsis)}</p>
               </div>
               <div className='columns' style={{ overflowX: 'scroll' }}>
                 {manga.images.map(image => (
