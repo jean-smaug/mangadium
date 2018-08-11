@@ -41,21 +41,6 @@ export const MangaDetail = types.compose(
   })
 )
 
-// const top = {
-//   mal_id: 2,
-//   rank: 1,
-//   url: "https://myanimelist.net/mangaOld/2/Berserk",
-//   image_url:
-//     "https://myanimelist.cdn-dena.com/r/100x140/images/mangaOld/1/157931.jpg?s=d26f8d9f883999147ce30092309a73fd",
-//   title: "Berserk",
-//   type: "MangaOld",
-//   score: 9.31,
-//   members: 198510,
-//   publishing_start: "Aug 1989",
-//   publishing_end: null,
-//   volumes: 0
-// };
-
 // const detail = {
 //   request_hash: "cbd9584b3fffd7c0e3d5748a059c6eeeee1f07d6",
 //   request_cached: true,

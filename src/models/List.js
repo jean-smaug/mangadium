@@ -26,5 +26,3 @@ export const List = types
       applySnapshot(self.mangas, mangas)
     }
   }))
-
-export default List

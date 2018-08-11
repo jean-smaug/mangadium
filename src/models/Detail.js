@@ -35,5 +35,3 @@ export const Detail = types
       }
     })
   }))
-
-export default Detail
