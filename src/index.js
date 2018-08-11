@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 import 'babel-polyfill'
@@ -19,13 +19,8 @@ ReactDOM.render(
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
-      const registration = await navigator.serviceWorker.register(
-        '../service-worker.js'
-      )
-      console.log(
-        'ServiceWorker registration successful with scope: ',
-        registration.scope
-      )
+      const registration = await navigator.serviceWorker.register('../service-worker.js')
+      console.log('ServiceWorker registration successful with scope: ', registration.scope)
     } catch (error) {
       console.log('ServiceWorker registration failed: ', error)
     }
