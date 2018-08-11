@@ -2,7 +2,6 @@ import { convertSpecialCharsToText } from "./string";
 
 export const transformManga = ({
   mal_id: id,
-  rank,
   url,
   image_url: imageUrl,
   title,
@@ -10,7 +9,6 @@ export const transformManga = ({
   score
 }) => ({
   id,
-  rank,
   url,
   imageUrl,
   title,
