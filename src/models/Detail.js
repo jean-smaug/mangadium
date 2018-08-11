@@ -1,13 +1,13 @@
 import { types, flow, getParent } from 'mobx-state-tree'
-import { bool } from 'prop-types'
+import { bool, shape } from 'prop-types'
 
 import { MangaDetail, MangaDetailPropTypes } from './Manga'
 import request from '../utils/request'
 
-export const DetailPropTypes = {
+export const DetailPropTypes = shape({
   manga: MangaDetailPropTypes,
   isOpen: bool.isRequired
-}
+})
 
 export const Detail = types
   .model({

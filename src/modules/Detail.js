@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react'
 
 import { MangaDetailPropTypes } from '../models/Manga'
 import ViewToggler from '../components/ViewToggler'
+import ImageSlider from '../components/ImageSlider'
 import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 
 @inject('detail')
@@ -42,15 +43,7 @@ class Detail extends Component {
               <div className='content'>
                 <p>{convertSpecialCharsToText(manga.synopsis)}</p>
               </div>
-              <div className='columns' style={{ overflowX: 'scroll' }}>
-                {manga.images.map(image => (
-                  <div key={image} className='column is-one-quarter'>
-                    <figure className='image is-3by5'>
-                      <img src={image} />
-                    </figure>
-                  </div>
-                ))}
-              </div>
+              <ImageSlider images={manga.images} />
             </div>
           )}
         </div>
