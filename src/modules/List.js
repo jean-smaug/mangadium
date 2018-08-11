@@ -1,23 +1,23 @@
-import React, { Component, Fragment } from "react";
-import { observer, inject } from "mobx-react";
+import React, { Component, Fragment } from 'react'
+import { observer, inject } from 'mobx-react'
 
-import Card from "../components/Card";
+import Card from '../components/Card'
 
-@inject("list", "detail")
+@inject('list', 'detail')
 @observer
 class Manga extends Component {
-  render() {
-    const { list, detail } = this.props;
+  render () {
+    const { list, detail } = this.props
     return (
       <Fragment>
-        <div className="container">
-          <div className="columns is-multiline">
+        <div className='container'>
+          <div className='columns is-multiline'>
             {list.mangas.map(item => (
-              <div key={item.id} className="column is-one-fifth">
+              <div key={item.id} className='column is-one-fifth'>
                 <Card
                   {...item}
                   onClick={() => {
-                    detail.setManga(item.id);
+                    detail.setManga(item.id)
                   }}
                 />
               </div>
@@ -25,8 +25,8 @@ class Manga extends Component {
           </div>
         </div>
       </Fragment>
-    );
+    )
   }
 }
 
-export default Manga;
+export default Manga

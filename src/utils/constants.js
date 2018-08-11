@@ -1,17 +1,17 @@
 export const TYPE = {
-  TV: "tv",
-  OVA: "ova",
-  MOVIE: "movie",
-  SPECIAL: "special",
-  ONA: "ona",
-  MUSIC: "music",
-  MANGA: "manga",
-  NOVEL: "novel",
-  ONESHOT: "oneshot",
-  DOUJIN: "doujin",
-  MANHWA: "manhwa",
-  MANHUA: "manhua"
-};
+  TV: 'tv',
+  OVA: 'ova',
+  MOVIE: 'movie',
+  SPECIAL: 'special',
+  ONA: 'ona',
+  MUSIC: 'music',
+  MANGA: 'manga',
+  NOVEL: 'novel',
+  ONESHOT: 'oneshot',
+  DOUJIN: 'doujin',
+  MANHWA: 'manhwa',
+  MANHUA: 'manhua'
+}
 
 export const GENRE = {
   ACTION: 1,
@@ -59,4 +59,4 @@ export const GENRE = {
   JOSEI: 43,
   DOUJINSHI: 43,
   GENDER_BENDER: 44
-};
+}

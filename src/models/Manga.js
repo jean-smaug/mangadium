@@ -1,5 +1,5 @@
-import { number, string, arrayOf } from "prop-types";
-import { types } from "mobx-state-tree";
+import { number, string, arrayOf } from 'prop-types'
+import { types } from 'mobx-state-tree'
 
 // Manga
 export const MangaPropTypes = {
@@ -9,7 +9,7 @@ export const MangaPropTypes = {
   imageUrl: string.isRequired,
   title: string.isRequired,
   publicationStartDate: string
-};
+}
 
 export const Manga = types.model({
   id: types.identifierNumber,
@@ -18,7 +18,7 @@ export const Manga = types.model({
   imageUrl: types.string,
   title: types.string,
   publicationStartDate: types.maybeNull(types.string)
-});
+})
 
 // Manga Detail
 export const MangaDetailPropTypes = {
@@ -28,7 +28,7 @@ export const MangaDetailPropTypes = {
   authors: arrayOf(string).isRequired,
   images: arrayOf(string),
   genres: arrayOf(string)
-};
+}
 
 export const MangaDetail = types.compose(
   Manga,
@@ -39,7 +39,7 @@ export const MangaDetail = types.compose(
     images: types.optional(types.array(types.string), []),
     genres: types.optional(types.array(types.string), [])
   })
-);
+)
 
 // const top = {
 //   mal_id: 2,

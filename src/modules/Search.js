@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 // import DatePicker from "react-datepicker";
-import moment from "moment";
-import { observer, inject } from "mobx-react";
+import moment from 'moment'
+import { observer, inject } from 'mobx-react'
 
-@inject("search")
+@inject('search')
 @observer
 class Search extends Component {
   state = {
@@ -11,53 +11,53 @@ class Search extends Component {
   };
 
   handleSearchedString = ({ target: { value: research } }) => {
-    this.props.search.setResearch(research);
+    this.props.search.setResearch(research)
   };
 
   reload = () => {
-    location.reload();
+    location.reload()
   };
 
   search = e => {
-    if (e.keyCode === 13 || e.target.type === "submit") {
-      this.props.search.search(this.state.search);
+    if (e.keyCode === 13 || e.target.type === 'submit') {
+      this.props.search.search(this.state.search)
     }
   };
 
   handleStartDateChange = date => {
-    this.props.search.setStartDate(date);
+    this.props.search.setStartDate(date)
   };
 
-  render() {
-    const { search } = this.props;
+  render () {
+    const { search } = this.props
     return (
       <div>
         <nav
-          className="navbar is-dark is-fixed-top"
-          role="navigation"
-          aria-label="main navigation"
+          className='navbar is-dark is-fixed-top'
+          role='navigation'
+          aria-label='main navigation'
         >
-          <div className="container">
-            <div className="navbar-brand">
-              <div className="navbar-item" onClick={this.reload}>
+          <div className='container'>
+            <div className='navbar-brand'>
+              <div className='navbar-item' onClick={this.reload}>
                 Mangadium
               </div>
 
               <a
-                role="button"
-                className="navbar-burger"
-                aria-label="menu"
-                aria-expanded="false"
+                role='button'
+                className='navbar-burger'
+                aria-label='menu'
+                aria-expanded='false'
               >
-                <span aria-hidden="true" />
-                <span aria-hidden="true" />
-                <span aria-hidden="true" />
+                <span aria-hidden='true' />
+                <span aria-hidden='true' />
+                <span aria-hidden='true' />
               </a>
             </div>
-            <div className="navbar-menu">
+            <div className='navbar-menu'>
               <div
-                className="navbar-end"
-                style={{ transform: "translate(-15px, 8px)" }}
+                className='navbar-end'
+                style={{ transform: 'translateY(8px)' }}
               >
                 {/* <div className="field">
                 <DatePicker
@@ -66,23 +66,23 @@ class Search extends Component {
                   popperPlacement="bottom-end"
                 />
               </div> */}
-                <div className="field has-addons">
-                  <div className="control">
+                <div className='field has-addons'>
+                  <div className='control'>
                     <input
-                      className="input"
-                      type="text"
-                      placeholder="One Piece..."
+                      className='input'
+                      type='text'
+                      placeholder='One Piece...'
                       value={search.research}
                       onChange={this.handleSearchedString}
                       onKeyUp={this.search}
                     />
                   </div>
-                  <div className="control">
+                  <div className='control'>
                     <button
-                      className="button is-info"
+                      className='button is-info'
                       onClick={this.search}
                       disabled={search.isSearchDisabled}
-                      type="submit"
+                      type='submit'
                     >
                       Chercher
                     </button>
@@ -93,8 +93,8 @@ class Search extends Component {
           </div>
         </nav>
       </div>
-    );
+    )
   }
 }
 
-export default Search;
+export default Search

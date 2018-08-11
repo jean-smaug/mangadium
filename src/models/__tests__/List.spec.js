@@ -1,13 +1,13 @@
-import List from "../List";
+import List from '../List'
 
-describe("<=== List ===>", () => {
-  let list = null;
+describe('<=== List ===>', () => {
+  let list = null
 
   beforeEach(() => {
-    list = List.create();
-  });
+    list = List.create()
+  })
 
-  it("should create store", () => {
-    expect(list).toMatchSnapshot();
-  });
-});
+  it('should create store', () => {
+    expect(list).toMatchSnapshot()
+  })
+})

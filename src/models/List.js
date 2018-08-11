@@ -1,28 +1,28 @@
-import { types, flow, applySnapshot } from "mobx-state-tree";
+import { types, flow, applySnapshot } from 'mobx-state-tree'
 
-import { Manga } from "./Manga";
-import request from "../utils/request";
+import { Manga } from './Manga'
+import request from '../utils/request'
 
 const List = types
   .model({
     mangas: types.optional(types.array(Manga), [])
   })
   .actions(self => ({
-    afterCreate() {
-      self.hyrdate();
+    afterCreate () {
+      self.hyrdate()
     },
-    hyrdate: flow(function*() {
+    hyrdate: flow(function * () {
       try {
-        const mangas = yield request.getTopMangas();
+        const mangas = yield request.getTopMangas()
 
-        self.setMangas(mangas);
+        self.setMangas(mangas)
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     }),
-    setMangas(mangas) {
-      applySnapshot(self.mangas, mangas);
+    setMangas (mangas) {
+      applySnapshot(self.mangas, mangas)
     }
-  }));
+  }))
 
-export default List;
+export default List
