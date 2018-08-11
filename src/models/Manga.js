@@ -24,6 +24,8 @@ export const Manga = types.model({
 export const MangaDetailPropTypes = {
   ...MangaPropTypes,
   synopsis: string.isRequired,
+  rank: number,
+  authors: arrayOf(string).isRequired,
   images: arrayOf(string),
   genres: arrayOf(string)
 };
@@ -32,6 +34,7 @@ export const MangaDetail = types.compose(
   Manga,
   types.model({
     synopsis: types.string,
+    rank: types.maybeNull(types.number),
     authors: types.optional(types.array(types.string), []),
     images: types.optional(types.array(types.string), []),
     genres: types.optional(types.array(types.string), [])
