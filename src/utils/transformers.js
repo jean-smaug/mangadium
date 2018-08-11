@@ -1,4 +1,4 @@
-import { convertSpecialCharsToText } from "./string";
+import { convertSpecialCharsToText } from "./render";
 
 export const transformManga = ({
   mal_id: id,

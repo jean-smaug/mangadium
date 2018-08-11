@@ -3,6 +3,7 @@ import { observer, inject } from "mobx-react";
 
 import { MangaDetailPropTypes } from "../models/Manga";
 import ViewToggler from "../components/ViewToggler";
+import { displayAuthors } from "../utils/render";
 
 @inject("detail")
 @observer
@@ -28,12 +29,7 @@ class Detail extends Component {
                   {manga.title}
                 </a>
               </h2>
-              <p className="subtitle">
-                {manga.authors.map(
-                  (author, index, array) =>
-                    `${author}${index !== array.length - 1 ? " & " : ""}`
-                )}
-              </p>
+              <p className="subtitle">{displayAuthors(manga.authors)}</p>
               <div className="content">
                 {manga.genres.map(genre => (
                   <span class="tag is-dark" style={{ marginLeft: "3px" }}>

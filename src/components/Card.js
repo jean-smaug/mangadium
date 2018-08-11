@@ -3,7 +3,6 @@ import { func } from "prop-types";
 import TextEllipsis from "react-text-ellipsis";
 
 import { MangaPropTypes } from "../models/Manga";
-import style from "../utils/style";
 import starIcon from "../images/star.png";
 
 class Card extends Component {
@@ -45,7 +44,14 @@ class Card extends Component {
               </time>
               <div style={{ marginLeft: "auto" }}>
                 {score}{" "}
-                <img style={{ verticalAlign: "text-bottom", width: "20px", height: "20px" }} src={starIcon} />
+                <img
+                  style={{
+                    verticalAlign: "text-bottom",
+                    width: "20px",
+                    height: "20px"
+                  }}
+                  src={starIcon}
+                />
               </div>
             </div>
           </div>

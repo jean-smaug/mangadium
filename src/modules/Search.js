@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import moment from "moment";
 import { observer, inject } from "mobx-react";
 
-import "../utils/burgerButtonToggle";
 @inject("search")
 @observer
 class Search extends Component {
