@@ -2,7 +2,6 @@ import { Manga } from '../Manga'
 
 const fisrtManga = Manga.create({
   id: 43,
-  rank: 1,
   score: 9.12,
   url: 'http://one-piece.fr',
   imageUrl: 'http://one-piece.jpg',
@@ -12,7 +11,6 @@ const fisrtManga = Manga.create({
 
 const secondManga = Manga.create({
   id: 43,
-  rank: null,
   score: null,
   url: 'http://one-piece.fr',
   imageUrl: 'http://one-piece.jpg',
