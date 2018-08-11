@@ -18,7 +18,7 @@ class Search extends Component {
 
   search = e => {
     if (e.keyCode === 13 || e.target.type === 'submit') {
-      this.props.search.search(this.state.search)
+      this.props.search.search(this.props.research)
     }
   }
 
@@ -49,6 +49,7 @@ class Search extends Component {
                   <div className='control'>
                     <input
                       className='input'
+                      style={{ width: '100%' }}
                       type='text'
                       placeholder='One Piece...'
                       value={search.research}
