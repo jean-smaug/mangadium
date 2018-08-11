@@ -5,10 +5,15 @@ import List from './modules/List'
 import Detail from './modules/Detail'
 import Search from './modules/Search'
 import Loader from './components/Loader'
+import { AppPropTypes } from './models/App'
 
 @inject('app')
 @observer
 class App extends Component {
+  static propTypes = {
+    app: AppPropTypes
+  }
+
   render () {
     return (
       <div>

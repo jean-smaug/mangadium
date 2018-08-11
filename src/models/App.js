@@ -1,6 +1,11 @@
 import { types } from 'mobx-state-tree'
+import { bool } from 'prop-types'
 
-const App = types
+export const AppPropTypes = {
+  isLoading: bool.isRequired
+}
+
+export const App = types
   .model({
     isLoading: types.optional(types.boolean, false)
   })
@@ -9,5 +14,3 @@ const App = types
       self.isLoading = !self.isLoading
     }
   }))
-
-export default App
