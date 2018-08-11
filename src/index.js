@@ -4,7 +4,6 @@ import { Provider } from 'mobx-react'
 import 'babel-polyfill'
 
 import 'bulma/css/bulma.min.css'
-import 'react-datepicker/dist/react-datepicker.css'
 
 import App from './App'
 import store from './store'
