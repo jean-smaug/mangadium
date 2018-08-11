@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { observer, inject } from "mobx-react";
+import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react'
 
-import List from "./modules/List";
-import Detail from "./modules/Detail";
-import Search from "./modules/Search";
-import Loader from "./components/Loader";
+import List from './modules/List'
+import Detail from './modules/Detail'
+import Search from './modules/Search'
+import Loader from './components/Loader'
 
-@inject("app")
+@inject('app')
 @observer
 class App extends Component {
-  render() {
+  render () {
     return (
       <div>
         {this.props.app.isLoading && <Loader />}
         <Search />
-        <div style={{ marginTop: "70px" }}>
+        <div style={{ marginTop: '70px' }}>
           <List />
           <Detail />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

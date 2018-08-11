@@ -1,33 +1,39 @@
-import { types, flow, getParent } from "mobx-state-tree";
+import { types, flow, getParent } from 'mobx-state-tree'
+import { bool } from 'prop-types'
 
-import { MangaDetail } from "./Manga";
-import request from "../utils/request";
+import { MangaDetail, MangaDetailPropTypes } from './Manga'
+import request from '../utils/request'
 
-const Detail = types
+export const DetailPropTypes = {
+  manga: MangaDetailPropTypes,
+  isOpen: bool
+}
+
+export const Detail = types
   .model({
     manga: types.maybeNull(MangaDetail),
     isOpen: types.optional(types.boolean, false)
   })
   .actions(self => ({
-    toggleVisibilityStatus() {
-      self.isOpen = !self.isOpen;
+    toggleVisibilityStatus () {
+      self.isOpen = !self.isOpen
     },
-    setManga: flow(function*(id) {
-      const appStore = getParent(self).app;
+    setManga: flow(function * (id) {
+      const appStore = getParent(self).app
 
       try {
-        appStore.toggleLoadingStatus();
+        appStore.toggleLoadingStatus()
 
-        const manga = yield request.getMangaAndPictures(id);
-        self.manga = manga;
+        const manga = yield request.getMangaAndPictures(id)
+        self.manga = manga
 
-        appStore.toggleLoadingStatus();
-        self.toggleVisibilityStatus();
+        appStore.toggleLoadingStatus()
+        self.toggleVisibilityStatus()
       } catch (error) {
-        console.error(error);
-        appStore.toggleLoadingStatus();
+        console.error(error)
+        appStore.toggleLoadingStatus()
       }
     })
-  }));
+  }))
 
-export default Detail;
+export default Detail

@@ -1,4 +1,4 @@
-import { convertSpecialCharsToText } from "./render";
+import { convertSpecialCharsToText } from './render'
 
 export const transformManga = ({
   mal_id: id,
@@ -14,7 +14,7 @@ export const transformManga = ({
   title,
   publicationStartDate,
   score
-});
+})
 
 export const transformMangaDetail = ({
   mal_id: id,
@@ -40,4 +40,4 @@ export const transformMangaDetail = ({
   synopsis: convertSpecialCharsToText(synopsis),
   genres: genres.map(genre => genre.name),
   authors: authors.map(author => author.name)
-});
+})

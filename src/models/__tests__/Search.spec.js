@@ -1,5 +1,5 @@
-import Search from "../Search";
+import { Search } from '../Search'
 
-describe("<=== Search ===>", () => {
-  it("should create store", () => {});
-});
+describe('<=== Search ===>', () => {
+  it('should create store', () => {})
+})
