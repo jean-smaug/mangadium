@@ -6,7 +6,7 @@ import { SearchPropTypes } from '../models/Search'
 @inject('search')
 @observer
 class Search extends Component {
-  static propTypes = SearchPropTypes
+  static propTypes = { search: SearchPropTypes }
 
   handleSearchedString = ({ target: { value: research } }) => {
     this.props.search.setResearch(research)
@@ -18,7 +18,7 @@ class Search extends Component {
 
   search = e => {
     if (e.keyCode === 13 || e.target.type === 'submit') {
-      this.props.search.search(this.props.research)
+      this.props.search.search(this.props.search.research)
     }
   }
 

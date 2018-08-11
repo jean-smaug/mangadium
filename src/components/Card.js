@@ -6,10 +6,13 @@ import { MangaPropTypes } from '../models/Manga'
 import starIcon from '../images/star.png'
 
 class Card extends Component {
-  static propTypes = { ...MangaPropTypes, onClick: func }
+  static propTypes = { manga: MangaPropTypes, onClick: func }
 
   render () {
-    const { score, imageUrl, title, publicationStartDate, onClick } = this.props
+    const {
+      manga: { score, imageUrl, title, publicationStartDate },
+      onClick
+    } = this.props
 
     return (
       <div className='card' onClick={onClick}>

@@ -9,7 +9,7 @@ import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 @inject('detail')
 @observer
 class Detail extends Component {
-  static propTypes = MangaDetailPropTypes
+  static propTypes = { detail: MangaDetailPropTypes }
 
   render () {
     const {
@@ -35,7 +35,7 @@ class Detail extends Component {
               <p className='subtitle'>{displayAuthors(manga.authors)}</p>
               <div className='content'>
                 {manga.genres.map(genre => (
-                  <span className='tag is-dark' style={{ marginLeft: '3px' }}>
+                  <span key={genre} className='tag is-dark' style={{ marginLeft: '3px' }}>
                     {genre}
                   </span>
                 ))}

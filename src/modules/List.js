@@ -22,7 +22,7 @@ class Manga extends Component {
             {list.mangas.map(item => (
               <div key={item.id} className='column is-one-fifth'>
                 <Card
-                  {...item}
+                  manga={item}
                   onClick={() => {
                     detail.setManga(item.id)
                   }}
