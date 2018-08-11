@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { func } from "prop-types";
+import TextEllipsis from "react-text-ellipsis";
 
 import { MangaPropTypes } from "../models/Manga";
 import style from "../utils/style";
+import starIcon from "../images/star.png";
 
 class Card extends Component {
   static propTypes = { ...MangaPropTypes, onClick: func };
@@ -45,24 +47,28 @@ class Card extends Component {
           </figure>
         </div>
         <div className="card-content">
-          <div className="content">
-            <div
-              className="title is-4"
-              title={title}
-              style={{
-                lineHeight: "1em",
-                maxHeight: "2em",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-                width: "100%"
-              }}
+          <div className="content ">
+            <TextEllipsis
+              lines={2}
+              tag={"p"}
+              ellipsisChars={"..."}
+              tagClass={"title is-4"}
+              style={{ height: "2.4em", lineHeight: "1.2em" }}
             >
               {title}
+            </TextEllipsis>
+            <div style={{ display: "flex" }}>
+              <time
+                style={{ fontStyle: "italic" }}
+                dateTime={publicationStartDate}
+              >
+                {publicationStartDate}
+              </time>
+              <div style={{ marginLeft: "auto" }}>
+                {score}{" "}
+                <img style={{ verticalAlign: "text-bottom" }} src={starIcon} />
+              </div>
             </div>
-            <br />
-            <time dateTime={publicationStartDate}>{publicationStartDate}</time>
-            <p>{score}</p>
           </div>
         </div>
       </div>
