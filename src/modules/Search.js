@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import DatePicker from "react-datepicker";
-import moment from 'moment'
 import { observer, inject } from 'mobx-react'
 
 import { SearchPropTypes } from '../models/Search'
@@ -9,10 +7,6 @@ import { SearchPropTypes } from '../models/Search'
 @observer
 class Search extends Component {
   static propTypes = SearchPropTypes
-
-  state = {
-    startDate: moment()
-  }
 
   handleSearchedString = ({ target: { value: research } }) => {
     this.props.search.setResearch(research)
@@ -51,13 +45,6 @@ class Search extends Component {
             </div>
             <div className='navbar-menu'>
               <div className='navbar-end' style={{ transform: 'translateY(8px)' }}>
-                {/* <div className="field">
-                <DatePicker
-                  selected={search.startDate}
-                  onChange={this.handleStartDateChange}
-                  popperPlacement="bottom-end"
-                />
-              </div> */}
                 <div className='field has-addons'>
                   <div className='control'>
                     <input

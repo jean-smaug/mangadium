@@ -21,7 +21,6 @@
     "mst-middlewares": "3.0.2",
     "prop-types": "15.6.2",
     "react": "16.4.2",
-    "react-datepicker": "1.6.0",
     "react-dom": "16.4.2",
     "react-loader-spinner": "2.1.0",
     "react-text-ellipsis": "1.4.0",
