@@ -1,14 +1,7 @@
-import React, { Component } from 'react'
-import { func, bool, element } from 'prop-types'
+import * as React from 'react'
 import styles from '../utils/styles'
 
-class ViewToggler extends Component {
-  static propTypes = {
-    isVisible: bool.isRequired,
-    onClose: func.isRequired,
-    children: element.isRequired
-  }
-
+class ViewToggler extends React.Component {
   render () {
     const { isVisible, onClose, children } = this.props
 

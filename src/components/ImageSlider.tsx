@@ -1,10 +1,7 @@
-import React, { Component } from 'react'
-import { arrayOf, string } from 'prop-types'
+import * as React from 'react'
 
 import Arrow from './Arrow'
-class ImageSlider extends Component {
-  static propTypes = { images: arrayOf(string) }
-
+class ImageSlider extends React.Component {
   constructor (props) {
     super(props)
     this.scrollWiew = React.createRef()

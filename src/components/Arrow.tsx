@@ -1,15 +1,8 @@
-import React, { Component } from 'react'
-import { oneOf, object, func } from 'prop-types'
+import * as React from 'react'
 
 import styles from '../utils/styles'
 
-class Arrow extends Component {
-  static propTypes = {
-    clickHandler: func,
-    direction: oneOf(['left', 'right']),
-    style: object
-  }
-
+class Arrow extends React.Component {
   render () {
     const { clickHandler, direction, style } = this.props
 

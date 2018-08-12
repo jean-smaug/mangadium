@@ -2,8 +2,8 @@ import * as React from 'react'
 import { observer, inject } from 'mobx-react'
 
 import Card from '../components/Card'
-import { ListPropTypes } from '../models/List'
-import { DetailPropTypes } from '../models/Detail'
+// import { ListPropTypes } from '../models/List'
+// import { DetailPropTypes } from '../models/Detail'
 
 @inject('list', 'detail')
 @observer

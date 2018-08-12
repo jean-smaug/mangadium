@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { observer, inject } from 'mobx-react'
 
+import { AppInterface } from './models/App'
+import Loader from './components/Loader'
+
 import Search from './modules/Search'
 import List from './modules/List.tsx'
-// import Detail from './modules/Detail.tsx'
-import Loader from './components/Loader'
-import { AppInterface } from './models/App'
+import Detail from './modules/Detail.tsx'
 
 @inject('app')
 @observer
@@ -18,7 +19,7 @@ class App extends React.Component<AppInterface, {}> {
         <Search />
         <div style={{ marginTop: '70px' }}>
           <List />
-          {/* <Detail /> */}
+          <Detail />
         </div>
       </div>
     )
