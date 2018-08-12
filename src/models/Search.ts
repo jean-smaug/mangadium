@@ -3,12 +3,6 @@ import { string, object } from 'prop-types'
 
 import request from '../utils/request'
 
-export const SearchPropTypes = {
-  research: string,
-  startDate: object,
-  endDate: object
-}
-
 export interface SearchInterface {
   research: string,
   startDate: object,

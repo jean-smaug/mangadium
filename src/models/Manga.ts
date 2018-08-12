@@ -2,12 +2,12 @@ import { types } from 'mobx-state-tree'
 import { number, string, arrayOf } from 'prop-types'
 
 // Manga
-export const MangaPropTypes = {
-  id: number.isRequired,
+export interface MangaInterface{
+  id: number,
   score: number,
-  url: string.isRequired,
-  imageUrl: string.isRequired,
-  title: string.isRequired,
+  url: string,
+  imageUrl: string,
+  title: string,
   publicationStartDate: string
 }
 
@@ -21,13 +21,12 @@ export const Manga = types.model({
 })
 
 // Manga Detail
-export const MangaDetailPropTypes = {
-  ...MangaPropTypes,
-  synopsis: string.isRequired,
+export interface MangaDetailInterface extends MangaInterface {
+  synopsis: string,
   rank: number,
-  authors: arrayOf(string),
-  images: arrayOf(string),
-  genres: arrayOf(string)
+  authors: string[],
+  images: string[],
+  genres: string[],
 }
 
 export const MangaDetail = types.compose(

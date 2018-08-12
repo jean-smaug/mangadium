@@ -1,9 +1,11 @@
 import { types, flow, applySnapshot } from 'mobx-state-tree'
 import { arrayOf } from 'prop-types'
-import { Manga, MangaPropTypes } from './Manga'
+import { Manga, MangaInterface } from './Manga'
 import request from '../utils/request'
 
-export const ListPropTypes = { mangas: arrayOf(MangaPropTypes) }
+export interface ListInterface {
+  mangas: MangaInterface[]
+}
 
 export const List = types
   .model({

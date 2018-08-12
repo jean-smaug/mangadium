@@ -2,12 +2,16 @@ import * as React from 'react'
 import { observer, inject } from 'mobx-react'
 
 import Card from '../components/Card'
-// import { ListPropTypes } from '../models/List'
-// import { DetailPropTypes } from '../models/Detail'
+import { ListInterface } from '../models/List'
+import { DetailInterface } from '../models/Detail'
+interface Props{
+  list: ListInterface,
+  detail: DetailInterface
+}
 
 @inject('list', 'detail')
 @observer
-class Manga extends React.Component<{}, {}> {
+class Manga extends React.Component<Props, {}> {
   render () {
     const { list, detail } = this.props
     return (

@@ -1,11 +1,13 @@
+import { MangaInterface, MangaDetailInterface } from '../models/Manga'
+
 export const transformManga = ({
-  mal_id: id,
   url,
+  mal_id: id,
   image_url: imageUrl,
   title,
   publishing_start: publicationStartDate,
   score
-}) => ({
+}): MangaInterface => ({
   id,
   url,
   imageUrl,
@@ -26,7 +28,7 @@ export const transformMangaDetail = ({
   score,
   genre: genres,
   author: authors
-}) => ({
+}): MangaDetailInterface => ({
   id,
   publicationStartDate,
   title,
