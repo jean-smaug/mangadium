@@ -1,6 +1,6 @@
-import { types, getParent } from "mobx-state-tree";
+import { types, getParent, IAnyType } from "mobx-state-tree";
 
-import request from "../utils/request";
+import * as request from "../utils/request";
 
 export interface SearchInterface {
   research: string;
@@ -9,12 +9,12 @@ export interface SearchInterface {
   isSearchDisabled: boolean;
 }
 
-export const Search = types
+export const Search: IAnyType = types
   .model({
     research: types.optional(types.string, ""),
   })
   .actions(self => ({
-    setResearch(research) {
+    setResearch(research: string) {
       self.research = research;
     },
     search() {

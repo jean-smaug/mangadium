@@ -23,7 +23,7 @@ export const List = types
         console.error(error)
       }
     }),
-    setMangas (mangas) {
+    setMangas (mangas: MangaInterface[]) {
       applySnapshot(self.mangas, mangas)
     }
   }))
