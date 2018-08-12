@@ -6,12 +6,9 @@ import request from '../utils/request'
 
 export interface DetailInterface {
   manga: object,
-  isOpen: boolean
-}
-
-export const DetailPropTypes = {
-  manga: MangaDetailPropTypes,
-  isOpen: bool.isRequired
+  isOpen: boolean,
+  toggleVisibilityStatus: () => void,
+  setManga: () => void
 }
 
 export const Detail = types

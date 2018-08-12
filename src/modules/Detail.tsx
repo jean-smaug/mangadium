@@ -5,11 +5,14 @@ import ViewToggler from '../components/ViewToggler'
 import ImageSlider from '../components/ImageSlider'
 import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 
-import {DetailInterface} from '../models/Detail'
+import { DetailInterface } from '../models/Detail'
 
+interface Props {
+  detail: DetailInterface
+}
 @inject('detail')
 @observer
-class Detail extends React.Component<{}, {}> {
+class Detail extends React.Component<Props, {}> {
   render () {
     const {
       detail,

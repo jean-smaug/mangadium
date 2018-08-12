@@ -3,7 +3,14 @@ import TextEllipsis from 'react-text-ellipsis'
 
 import starIcon from '../images/star.png'
 
-class Card extends React.Component {
+interface Props{
+  manga: {
+    score: number, imageUrl: string, title: string, publicationStartDate: string
+  },
+  onClick: () => void
+}
+
+class Card extends React.Component<Props, {}> {
   render () {
     const {
       manga: { score, imageUrl, title, publicationStartDate },

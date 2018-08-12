@@ -1,15 +1,21 @@
 import * as React from 'react'
 
 import Arrow from './Arrow'
-class ImageSlider extends React.Component {
+
+interface Props{
+  images: string[]
+}
+
+interface State {
+  scrollViewPosition: number
+}
+class ImageSlider extends React.Component<Props, State> {
   constructor (props) {
     super(props)
     this.scrollWiew = React.createRef()
 
     this.state = {
       scrollViewPosition: 0,
-      firstItem: 0,
-      lastItem: 4
     }
   }
 

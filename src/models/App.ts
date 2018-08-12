@@ -1,7 +1,8 @@
 import { types } from 'mobx-state-tree'
 
 export interface AppInterface{
-  isLoading: boolean
+  isLoading: boolean,
+  toggleLoadingStatus: () => void
 }
 
 export const App = types
