@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react'
 
 // import List from './modules/List.tsx'
 // import Detail from './modules/Detail.tsx'
-// import Search from './modules/Search'
+import Search from './modules/Search'
 import Loader from './components/Loader'
 import { AppInterface } from './models/App'
 
@@ -13,8 +13,9 @@ class App extends React.Component<AppInterface, {}> {
   render () {
     return (
       <div>
+        hello
         {this.props.app.isLoading && <Loader />}
-        {/* <Search /> */}
+        <Search />
         {/* <div style={{ marginTop: '70px' }}>
           <List />
           <Detail />
