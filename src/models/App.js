@@ -1,9 +1,9 @@
 import { types } from 'mobx-state-tree'
-import { bool, shape } from 'prop-types'
+import { bool } from 'prop-types'
 
-export const AppPropTypes = shape({
+export const AppPropTypes = {
   isLoading: bool.isRequired
-})
+}
 
 export const App = types
   .model({

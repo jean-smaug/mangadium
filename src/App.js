@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
+import { shape } from 'prop-types'
 
 import List from './modules/List'
 import Detail from './modules/Detail'
@@ -11,7 +12,7 @@ import { AppPropTypes } from './models/App'
 @observer
 class App extends Component {
   static propTypes = {
-    app: AppPropTypes
+    app: shape(AppPropTypes)
   }
 
   render () {

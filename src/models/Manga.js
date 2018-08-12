@@ -1,15 +1,15 @@
 import { types } from 'mobx-state-tree'
-import { number, string, arrayOf, shape } from 'prop-types'
+import { number, string, arrayOf } from 'prop-types'
 
 // Manga
-export const MangaPropTypes = shape({
+export const MangaPropTypes = {
   id: number.isRequired,
   score: number,
   url: string.isRequired,
   imageUrl: string.isRequired,
   title: string.isRequired,
   publicationStartDate: string
-})
+}
 
 export const Manga = types.model({
   id: types.identifierNumber,
@@ -21,14 +21,14 @@ export const Manga = types.model({
 })
 
 // Manga Detail
-export const MangaDetailPropTypes = shape({
+export const MangaDetailPropTypes = {
   ...MangaPropTypes,
   synopsis: string.isRequired,
   rank: number,
   authors: arrayOf(string),
   images: arrayOf(string),
   genres: arrayOf(string)
-})
+}
 
 export const MangaDetail = types.compose(
   Manga,

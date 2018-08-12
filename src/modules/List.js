@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { observer, inject } from 'mobx-react'
+import { shape } from 'prop-types'
 
 import Card from '../components/Card'
 import { ListPropTypes } from '../models/List'
@@ -9,8 +10,8 @@ import { DetailPropTypes } from '../models/Detail'
 @observer
 class Manga extends Component {
   static propTypes = {
-    list: ListPropTypes,
-    detail: DetailPropTypes
+    list: shape(ListPropTypes),
+    detail: shape(DetailPropTypes)
   }
 
   render () {

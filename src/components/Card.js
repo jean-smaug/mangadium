@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { func } from 'prop-types'
+import { func, shape } from 'prop-types'
 import TextEllipsis from 'react-text-ellipsis'
 
 import { MangaPropTypes } from '../models/Manga'
 import starIcon from '../images/star.png'
 
 class Card extends Component {
-  static propTypes = { manga: MangaPropTypes, onClick: func }
+  static propTypes = { manga: shape(MangaPropTypes), onClick: func }
 
   render () {
     const {

@@ -1,13 +1,13 @@
 import { types, getParent } from 'mobx-state-tree'
-import { string, object, shape } from 'prop-types'
+import { string, object } from 'prop-types'
 
 import request from '../utils/request'
 
-export const SearchPropTypes = shape({
+export const SearchPropTypes = {
   research: string,
   startDate: object,
   endDate: object
-})
+}
 
 export const Search = types
   .model({
