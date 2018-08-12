@@ -5,8 +5,8 @@ import { AppInterface } from './models/App'
 import Loader from './components/Loader'
 
 import Search from './modules/Search'
-import List from './modules/List.tsx'
-import Detail from './modules/Detail.tsx'
+import List from './modules/List'
+import Detail from './modules/Detail'
 
 @inject('app')
 @observer

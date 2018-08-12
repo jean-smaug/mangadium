@@ -9,7 +9,7 @@ import App from './App'
 import store from './store'
 
 ReactDOM.render(
-  <Provider {...store} isLoading={store.isLoading}>
+  <Provider {...store}>
     <App />
    </Provider>
    ,
