@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import ReactLoader from 'react-loader-spinner'
 
 import styles from '../utils/styles'
 
-class Loader extends Component {
+class Loader extends React.Component {
   render () {
     return (
       <div

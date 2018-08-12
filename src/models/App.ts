@@ -1,8 +1,7 @@
 import { types } from 'mobx-state-tree'
-import { bool } from 'prop-types'
 
-export const AppPropTypes = {
-  isLoading: bool.isRequired
+export interface AppInterface{
+  isLoading: boolean
 }
 
 export const App = types

@@ -4,6 +4,11 @@ import { bool } from 'prop-types'
 import { MangaDetail, MangaDetailPropTypes } from './Manga'
 import request from '../utils/request'
 
+export interface DetailInterface {
+  manga: object,
+  isOpen: boolean
+}
+
 export const DetailPropTypes = {
   manga: MangaDetailPropTypes,
   isOpen: bool.isRequired

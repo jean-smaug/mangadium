@@ -9,6 +9,12 @@ export const SearchPropTypes = {
   endDate: object
 }
 
+export interface SearchInterface {
+  research: string,
+  startDate: object,
+  endDate: object
+}
+
 export const Search = types
   .model({
     research: types.optional(types.string, ''),

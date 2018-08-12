@@ -5,7 +5,7 @@ import 'babel-polyfill'
 
 import 'bulma/css/bulma.min.css'
 
-import App from './App'
+import App from './App.tsx'
 import store from './store'
 
 ReactDOM.render(

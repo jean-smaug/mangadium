@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { observer, inject } from 'mobx-react'
-import { shape } from 'prop-types'
 
-import { MangaDetailPropTypes } from '../models/Manga'
 import ViewToggler from '../components/ViewToggler'
 import ImageSlider from '../components/ImageSlider'
 import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 
+import {DetailInterface} from '../models/Detail'
+
 @inject('detail')
 @observer
-class Detail extends Component {
-  static propTypes = { detail: shape(MangaDetailPropTypes) }
-
+class Detail extends React.Component<{}, {}> {
   render () {
     const {
       detail,

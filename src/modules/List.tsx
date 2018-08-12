@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import * as React from 'react'
 import { observer, inject } from 'mobx-react'
 import { shape } from 'prop-types'
 
@@ -8,7 +8,7 @@ import { DetailPropTypes } from '../models/Detail'
 
 @inject('list', 'detail')
 @observer
-class Manga extends Component {
+class Manga extends React.Component {
   static propTypes = {
     list: shape(ListPropTypes),
     detail: shape(DetailPropTypes)
@@ -17,7 +17,7 @@ class Manga extends Component {
   render () {
     const { list, detail } = this.props
     return (
-      <Fragment>
+      <React.Fragment>
         <div className='container'>
           <div className='columns is-multiline'>
             {list.mangas.map(item => (
@@ -32,7 +32,7 @@ class Manga extends Component {
             ))}
           </div>
         </div>
-      </Fragment>
+      </React.Fragment>
     )
   }
 }
