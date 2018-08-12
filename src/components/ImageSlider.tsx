@@ -10,7 +10,7 @@ interface State {
   scrollViewPosition: number
 }
 class ImageSlider extends React.Component<Props, State> {
-  constructor (props) {
+  constructor (props: Props) {
     super(props)
     this.scrollWiew = React.createRef()
 

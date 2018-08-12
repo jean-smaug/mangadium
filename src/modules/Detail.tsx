@@ -12,7 +12,7 @@ interface Props {
 }
 @inject('detail')
 @observer
-class Detail extends React.Component<Props, {}> {
+class Detail extends React.Component<Props> {
   render () {
     const {
       detail,
@@ -30,9 +30,6 @@ class Detail extends React.Component<Props, {}> {
                     {manga.title}
                   </a>
                 </h2>
-                {/* <div className='title is-4' style={{ marginLeft: 'auto' }}>
-                  Classement : {manga.rank}
-                </div> */}
               </div>
               <p className='subtitle'>{displayAuthors(manga.authors)}</p>
               <div className='content'>

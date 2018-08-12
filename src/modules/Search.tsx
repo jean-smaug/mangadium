@@ -3,11 +3,16 @@ import { observer, inject } from 'mobx-react'
 
 import { SearchInterface } from '../models/Search'
 
+interface Props {
+  search: SearchInterface
+}
+
 @inject('search')
 @observer
-class Search extends React.Component<SearchInterface, {}> {
+class Search extends React.Component<Props> {
 
-  handleSearchedString = ({ target: { value: research } }) => {
+  handleSearchedString = (e: any) => {
+    const { target: { value: research } } = e
     this.props.search.setResearch(research)
   }
 
@@ -15,14 +20,10 @@ class Search extends React.Component<SearchInterface, {}> {
     location.reload()
   }
 
-  search = e => {
+  search = (e: any) => {
     if (e.keyCode === 13 || e.target.type === 'submit') {
-      this.props.search.search(this.props.search.research)
+      this.props.search.search()
     }
-  }
-
-  handleStartDateChange = date => {
-    this.props.search.setStartDate(date)
   }
 
   render () {

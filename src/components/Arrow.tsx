@@ -2,7 +2,12 @@ import * as React from 'react'
 
 import styles from '../utils/styles'
 
-class Arrow extends React.Component {
+interface Props {
+  clickHandler: () => void,
+direction: string,
+style: object
+}
+class Arrow extends React.Component<Props> {
   render () {
     const { clickHandler, direction, style } = this.props
 

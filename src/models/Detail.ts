@@ -1,14 +1,14 @@
 import { types, flow, getParent } from 'mobx-state-tree'
 import { bool } from 'prop-types'
 
-import { MangaDetail, MangaDetailPropTypes } from './Manga'
+import { MangaDetail, MangaDetailInterface } from './Manga'
 import request from '../utils/request'
 
 export interface DetailInterface {
-  manga: object,
+  manga: MangaDetailInterface,
   isOpen: boolean,
   toggleVisibilityStatus: () => void,
-  setManga: () => void
+  setManga: (id: number) => void
 }
 
 export const Detail = types

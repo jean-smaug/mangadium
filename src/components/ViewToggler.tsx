@@ -1,7 +1,11 @@
 import * as React from 'react'
 import styles from '../utils/styles'
 
-class ViewToggler extends React.Component {
+interface Props{
+  isVisible: boolean,
+onClose: () => void
+}
+class ViewToggler extends React.Component<Props> {
   render () {
     const { isVisible, onClose, children } = this.props
 

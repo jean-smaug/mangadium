@@ -1,7 +1,7 @@
 import * as React from 'react'
 import TextEllipsis from 'react-text-ellipsis'
 
-import starIcon from '../images/star.png'
+import * as starIcon from '../images/star.png'
 
 interface Props{
   manga: {
