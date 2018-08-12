@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { arrayOf, string } from 'prop-types'
+// import { throttle } from 'throttle-debounce'
 
 import Arrow from './Arrow'
 class ImageSlider extends Component {
@@ -10,34 +11,53 @@ class ImageSlider extends Component {
     this.scrollWiew = React.createRef()
 
     this.state = {
-      scrollViewPosition: 0,
-      firstItem: 0,
-      lastItem: 4
+      shouldDisplayLeftArrow: false,
+      shouldDisplayRightArrow: true
     }
   }
+
+  // componentDidMount () {
+  //   this.scrollWiew.current.addEventListener(
+  //     'scroll',
+  //     throttle(300, e => {
+  //       console.log(e.target.scrollLeft)
+  //     })
+  //   )
+  // }
 
   scroll = direction => {
     const scrollView = this.scrollWiew.current
     const scrollViewPosition = scrollView.scrollLeft
     const elementWidth = scrollView.children[0].clientWidth
+    const numberOfElements = this.props.images.length
+    let newPosition = 0
 
     switch (direction) {
       case 'right':
-        scrollView.scrollLeft += elementWidth * 1
-        this.setState({ scrollViewPosition: scrollViewPosition + elementWidth })
+        newPosition = scrollViewPosition + elementWidth * 1
+        scrollView.scrollLeft += newPosition
+        this.setState({
+          shouldDisplayLeftArrow: newPosition !== 0,
+          shouldDisplayRightArrow: newPosition !== (numberOfElements - 4) * elementWidth
+        })
         break
       case 'left':
-        scrollView.scrollLeft -= elementWidth * 1
-        this.setState({ scrollViewPosition: scrollViewPosition - elementWidth })
+        newPosition = scrollViewPosition - elementWidth * 1
+        scrollView.scrollLeft = newPosition
+        this.setState({
+          shouldDisplayLeftArrow: newPosition !== 0,
+          shouldDisplayRightArrow: true
+        })
         break
     }
   }
 
   render () {
-    const { scrollViewPosition } = this.state
+    const { shouldDisplayLeftArrow, shouldDisplayRightArrow } = this.state
+    const { images } = this.props
     return (
       <div style={{ position: 'relative' }}>
-        {scrollViewPosition > 0 && (
+        {shouldDisplayLeftArrow && (
           <Arrow
             direction='left'
             clickHandler={() => {
@@ -46,21 +66,23 @@ class ImageSlider extends Component {
             style={{ left: 0, transform: 'translateX(-90%)' }}
           />
         )}
-
-        <Arrow
-          direction='right'
-          clickHandler={() => {
-            this.scroll('right')
-          }}
-          style={{ right: 0, transform: 'translateX(90%)' }}
-        />
+        {images.length > 4 &&
+          shouldDisplayRightArrow && (
+          <Arrow
+            direction='right'
+            clickHandler={() => {
+              this.scroll('right')
+            }}
+            style={{ right: 0, transform: 'translateX(90%)' }}
+          />
+        )}
 
         <div
           ref={this.scrollWiew}
           className='columns'
           style={{ overflowX: 'scroll', scrollBehavior: 'smooth' }}
         >
-          {this.props.images.map(image => (
+          {images.map(image => (
             <div key={image} className='column is-one-quarter'>
               <figure className='image is-3by5'>
                 <img src={image} />
