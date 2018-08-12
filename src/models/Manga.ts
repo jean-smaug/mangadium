@@ -1,5 +1,4 @@
 import { types } from 'mobx-state-tree'
-import { number, string, arrayOf } from 'prop-types'
 
 // Manga
 export interface MangaInterface{

@@ -1,5 +1,4 @@
 import { types, getParent } from "mobx-state-tree";
-import { string, object } from "prop-types";
 
 import request from "../utils/request";
 

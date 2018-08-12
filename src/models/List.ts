@@ -1,5 +1,4 @@
 import { types, flow, applySnapshot } from 'mobx-state-tree'
-import { arrayOf } from 'prop-types'
 import { Manga, MangaInterface } from './Manga'
 import request from '../utils/request'
 

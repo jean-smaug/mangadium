@@ -1,5 +1,4 @@
 import { types, flow, getParent } from 'mobx-state-tree'
-import { bool } from 'prop-types'
 
 import { MangaDetail, MangaDetailInterface } from './Manga'
 import request from '../utils/request'

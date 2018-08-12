@@ -21,12 +21,11 @@
     "mobx-state-tree": "3.0.2",
     "moment": "2.22.2",
     "mst-middlewares": "3.0.2",
-    "prop-types": "15.6.2",
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-loader-spinner": "2.1.0",
     "react-text-ellipsis": "1.4.0",
-    "remotedev": "^0.2.7",
+    "remotedev": "0.2.7",
     "uuid": "3.3.2"
   },
   "devDependencies": {
