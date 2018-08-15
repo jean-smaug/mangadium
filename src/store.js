@@ -13,7 +13,7 @@ const store = types
     search: Search
   })
   .create({
-    app: App.create(),
+    app: App.create({ errorDuration: 4000 }),
     list: List.create(),
     detail: Detail.create(),
     search: Search.create()

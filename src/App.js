@@ -5,6 +5,7 @@ import { shape } from 'prop-types'
 import List from './modules/List'
 import Detail from './modules/Detail'
 import Search from './modules/Search'
+import Error from './modules/Error'
 import Loader from './components/Loader'
 import { AppPropTypes } from './models/App'
 
@@ -21,6 +22,7 @@ class App extends Component {
         {this.props.app.isLoading && <Loader />}
         <Search />
         <div style={{ marginTop: '70px' }}>
+          <Error />
           <List />
           <Detail />
         </div>

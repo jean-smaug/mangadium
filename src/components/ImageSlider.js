@@ -66,7 +66,8 @@ class ImageSlider extends Component {
             style={{ left: 0, transform: 'translateX(-90%)' }}
           />
         )}
-        {images.length > 4 &&
+        {images &&
+          images.length > 4 &&
           shouldDisplayRightArrow && (
           <Arrow
             direction='right'
