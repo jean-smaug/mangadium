@@ -1,4 +1,4 @@
-import { types, flow, applySnapshot } from 'mobx-state-tree'
+import { types, flow, applySnapshot, getParent } from 'mobx-state-tree'
 import { arrayOf } from 'prop-types'
 import { Manga, MangaPropTypes } from './Manga'
 import request from '../utils/request'
@@ -19,7 +19,8 @@ export const List = types
 
         self.setMangas(mangas)
       } catch (error) {
-        console.error(error)
+        const appStore = getParent(self).app
+        appStore.pushError('Je ne peux pas charger la liste des mangas, surrement la faute du back')
       }
     }),
     setMangas (mangas) {

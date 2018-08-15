@@ -9,16 +9,18 @@ class ErrorBox extends Component {
   render () {
     return (
       <Fragment>
-        <div style={{ position: 'fixed', left: 0 }}>
-          {/* eslint-disable-next-line handle-callback-err */}
-          {this.props.errors.map(error => (
-            <div className='message is-danger'>
-              <div className='message-body'>
-                <strong>{error}</strong>
-              </div>
+        {/* eslint-disable-next-line handle-callback-err */}
+        {this.props.errors.map(error => (
+          <div
+            key={error}
+            className='message is-danger'
+            style={{ animation: 'slideFromLeft 0.5s ease', animationFillMode: 'both' }}
+          >
+            <div className='message-body'>
+              <strong>{error}</strong>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </Fragment>
     )
   }
