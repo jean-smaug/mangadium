@@ -12,15 +12,9 @@ class Error extends Component {
     app: AppPropTypes
   }
 
-  componentDidMount () {
-    setTimeout(() => {
-      this.props.app.pushError('la chancle')
-    }, 3000)
-  }
-
   render () {
     return (
-      <div style={{ position: 'fixed', left: 0, width: '20vw', zIndex: styles.zIndexMajor }}>
+      <div style={{ position: 'fixed', left: '10px', width: '300px', zIndex: styles.zIndexMajor }}>
         <ErrorBox errors={this.props.app.errors} />
       </div>
     )

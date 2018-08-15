@@ -24,23 +24,31 @@ class ViewToggler extends Component {
           visibility: isVisible ? 'visible' : 'hidden'
         }}
       >
+        <button
+          className='button is-danger'
+          style={{
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            zIndex: styles.zIndexMajor,
+            opacity: isVisible ? 1 : 0,
+            transition: 'opacity 600ms ease'
+          }}
+          onClick={onClose}
+        >
+          X
+        </button>
         <div
           style={{
-            height: '95vh',
+            position: 'relative',
+            height: '100vh',
             background: 'white',
-            transform: `translateY(${isVisible ? '5vh' : '95vh'})`,
+            transform: `translateY(${isVisible ? 0 : '100vh'})`,
             transition: 'transform 600ms ease',
             overflowX: 'scroll',
             padding: '40px 50px'
           }}
         >
-          <button
-            className='button'
-            style={{ position: 'absolute', top: '20px', right: '20px' }}
-            onClick={onClose}
-          >
-            X
-          </button>
           {children}
         </div>
       </div>

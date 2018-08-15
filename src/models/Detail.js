@@ -30,8 +30,10 @@ export const Detail = types
         appStore.toggleLoadingStatus()
         self.toggleVisibilityStatus()
       } catch (error) {
-        console.error(error)
         appStore.toggleLoadingStatus()
+        appStore.pushError(
+          'Je ne peux pas charger le détail de ce manga, surrement la faute du back'
+        )
       }
     })
   }))
