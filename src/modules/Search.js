@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import { observer, inject } from 'mobx-react'
-import { shape } from 'prop-types'
+import { observer, inject, PropTypes } from 'mobx-react'
 
 import { SearchPropTypes } from '../models/Search'
 
 @inject('search')
 @observer
 class Search extends Component {
-  static propTypes = { search: shape(SearchPropTypes) }
+  static propTypes = PropTypes.observableObject({ search: SearchPropTypes })
 
   handleSearchedString = ({ target: { value: research } }) => {
     this.props.search.setResearch(research)

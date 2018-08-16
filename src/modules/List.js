@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { observer, inject } from 'mobx-react'
-import { shape } from 'prop-types'
+import { observer, inject, PropTypes } from 'mobx-react'
 
 import Card from '../components/Card'
 import { ListPropTypes } from '../models/List'
@@ -9,10 +8,10 @@ import { DetailPropTypes } from '../models/Detail'
 @inject('list', 'detail')
 @observer
 class Manga extends Component {
-  static propTypes = {
-    list: shape(ListPropTypes),
-    detail: shape(DetailPropTypes)
-  }
+  static propTypes = PropTypes.observableObject({
+    list: ListPropTypes,
+    detail: DetailPropTypes
+  })
 
   render () {
     const { list, detail } = this.props
@@ -20,12 +19,12 @@ class Manga extends Component {
       <Fragment>
         <div className='container'>
           <div className='columns is-multiline'>
-            {list.mangas.map(item => (
-              <div key={item.id} className='column is-one-fifth'>
+            {list.mangas.map(manga => (
+              <div key={manga.id} className='column is-one-fifth'>
                 <Card
-                  manga={item}
+                  manga={manga}
                   onClick={() => {
-                    detail.setManga(item.id)
+                    detail.setManga(manga.id)
                   }}
                 />
               </div>

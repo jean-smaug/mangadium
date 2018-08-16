@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { observer, inject } from 'mobx-react'
-import { shape } from 'prop-types'
+import { observer, inject, PropTypes } from 'mobx-react'
 
 import { MangaDetailPropTypes } from '../models/Manga'
 import ViewToggler from '../components/ViewToggler'
@@ -10,7 +9,7 @@ import { displayAuthors, convertSpecialCharsToText } from '../utils/render'
 @inject('detail')
 @observer
 class Detail extends Component {
-  static propTypes = { detail: shape(MangaDetailPropTypes) }
+  static propTypes = { detail: PropTypes.observableObject(MangaDetailPropTypes) }
 
   render () {
     const {

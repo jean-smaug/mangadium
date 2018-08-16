@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { inject, observer } from 'mobx-react'
+import { inject, observer, PropTypes } from 'mobx-react'
 
 import ErrorBox from '../components/ErrorBox'
 import { AppPropTypes } from '../models/App'
@@ -8,9 +8,9 @@ import styles from '../utils/styles'
 @inject('app')
 @observer
 class Error extends Component {
-  static propTypes = {
+  static propTypes = PropTypes.observableObject({
     app: AppPropTypes
-  }
+  })
 
   render () {
     return (
