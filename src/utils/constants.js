@@ -42,6 +42,5 @@ export const GENRE = {
   THRILLER: 41,
   SEINEN: 42,
   JOSEI: 43,
-  DOUJINSHI: 43,
-  GENDER_BENDER: 44
+  DOUJINSHI: 44
 }

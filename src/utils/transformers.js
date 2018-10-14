@@ -17,15 +17,15 @@ export const transformManga = ({
 export const transformMangaDetail = ({
   mal_id: id,
   rank,
-  link_canonical: url,
+  url,
   image_url: imageUrl,
   title,
   published: { from: publicationStartDate },
-  image: images,
+  pictures: images,
   synopsis,
   score,
-  genre: genres,
-  author: authors
+  genres,
+  authors
 }) => ({
   id,
   publicationStartDate,
@@ -39,3 +39,5 @@ export const transformMangaDetail = ({
   genres: genres.map(genre => genre.name),
   authors: authors.map(author => author.name)
 })
+
+export const transformImages = images => images.map(image => image.small)

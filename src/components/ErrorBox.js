@@ -12,7 +12,7 @@ class ErrorBox extends Component {
         {/* eslint-disable-next-line handle-callback-err */}
         {this.props.errors.map(error => (
           <div
-            key={error}
+            key={performance.now()}
             className='message is-danger'
             style={{ animation: 'slideFromLeft 0.5s ease', animationFillMode: 'both' }}
           >

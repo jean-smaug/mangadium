@@ -24,12 +24,15 @@ export const Detail = types
       try {
         appStore.toggleLoadingStatus()
 
-        const manga = yield request.getMangaAndPictures(id)
-        self.manga = manga
+        const manga = yield request.getManga(id)
+        const images = yield request.getMangaPictures(id)
+        console.log({ ...manga, images })
+        self.manga = { ...manga, images }
 
         appStore.toggleLoadingStatus()
         self.toggleVisibilityStatus()
       } catch (error) {
+        console.log('meeerde', error)
         appStore.toggleLoadingStatus()
         appStore.pushError(
           'Je ne peux pas charger le détail de ce manga, surrement la faute du back'
