@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<=== Manga ===> should create store 1`] = `
-Object {
-  "isLoading": false,
-}
-`;
+exports[`<=== Manga ===> should create store 1`] = `null`;
