@@ -9,7 +9,7 @@ class Request {
       GENRE.YAOI
     }&genres[]=${GENRE.SHOUNEN_AI}&genres[]=${GENRE.SHOUJO_AI}&genres[]=${GENRE.ECCHI}&genres[]=${
       GENRE.DOUJINSHI
-    }&genre_exclude=1`
+    }&genres_exclude=1`
   }
 
   jsonFetch (path = '/') {
@@ -30,7 +30,7 @@ class Request {
   }
 
   async searchMangas (query) {
-    return (await this.jsonFetch(`/search/manga?q=${query}&${this.exclusion}`)).result.map(
+    return (await this.jsonFetch(`/search/manga?q=${query}&${this.exclusion}`)).results.map(
       transformManga
     )
   }

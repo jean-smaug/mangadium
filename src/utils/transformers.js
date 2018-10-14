@@ -3,7 +3,7 @@ export const transformManga = ({
   url,
   image_url: imageUrl,
   title,
-  publishing_start: publicationStartDate,
+  start_date: publicationStartDate,
   score
 }) => ({
   id,
