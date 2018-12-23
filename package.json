@@ -24,7 +24,7 @@
     "react-dom": "16.7.0",
     "react-loader-spinner": "2.3.0",
     "react-text-ellipsis": "1.5.1",
-    "remotedev": "^0.2.7",
+    "remotedev": "0.2.7",
     "throttle-debounce": "2.0.1",
     "uuid": "3.3.2"
   },
